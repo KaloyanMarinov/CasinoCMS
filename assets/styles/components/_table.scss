@@ -28,23 +28,23 @@
     }
 
     &--bordered {
-      box-shadow: 0 0 0 2px #e2deea;
+      box-shadow: 0 0 0 2px #f7f7f7;
       border-radius: $table-border-radius;
 
 
         // thead {
 
         //     th {
-        //       border-top: 2px solid #e2deea;
+        //       border-top: 2px solid #f7f7f7;
 
         //         &:first-child {
-        //           border-left: 2px solid #e2deea;
+        //           border-left: 2px solid #f7f7f7;
         //         }
         //     }
         // }
 
         tbody tr:not(:last-child) {
-          border-bottom: 2px solid #e2deea;
+          border-bottom: 2px solid #f7f7f7;
         }
     }
 

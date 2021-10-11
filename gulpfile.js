@@ -268,14 +268,33 @@ gulp.task('images', function() {
 });
 
 // ### File Include
-gulp.task('fileinclude', function() {
-  gulp.src('./*.html')
+gulp.task('fileinclude', async function() { // jshint ignore:line
+  gulp.src(['./pages-1/*.html'])
+  .pipe(flatten())
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: './templates/',
+    }))
+    .pipe(gulp.dest('./html'))
+    .pipe(browserSync.stream());
+  
+  gulp.src(['./pages-2/*.html'])
     .pipe(flatten())
     .pipe(fileinclude({
       prefix: '@@',
       basepath: './templates/',
     }))
-    .pipe(gulp.dest('./html'));
+    .pipe(gulp.dest('./html'))
+    .pipe(browserSync.stream());
+  
+  gulp.src(['./pages-3/*.html'])
+    .pipe(flatten())
+      .pipe(fileinclude({
+        prefix: '@@',
+        basepath: './templates/',
+      }))
+      .pipe(gulp.dest('./html'))
+      .pipe(browserSync.stream());
 });
 
 // ### Clean
@@ -303,7 +322,7 @@ gulp.task('watch', function() {
   gulp.watch([path.source + 'scripts/**/*'], gulp.series('scripts'));
   gulp.watch([path.source + 'fonts/**/*'], gulp.series('fonts'));
   gulp.watch([path.source + 'images/**/*'], gulp.series('images'));
-  gulp.watch(['./*.html', './templates/**/*'], gulp.series('fileinclude'));
+  gulp.watch(['./pages-1/*.html', './pages-2/*.html', './pages-3/*.html', './templates/**/*'], gulp.series('fileinclude'));
   gulp.watch(['assets/manifest.json'], gulp.series('manifest'));
 });
 

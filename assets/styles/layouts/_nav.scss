@@ -20,7 +20,7 @@
 	z-index: 1;
 
 		&__close {
-			color: rgba($white, .2);
+			color: #A7A7A7;
 			
 			@include media-breakpoint-up(sm) {
 				flex: 0 0 $header-height;
@@ -37,7 +37,7 @@
 
 				&:hover {
 					color: $white;
-					background-color: $orange;
+					background-color: $black;
 				}
 		}
 
@@ -102,13 +102,13 @@
 	display: none;
 
 		&__active {
-			background-color: rgba($orange, .1);
+			background-color: $black;
 
 			a {
-				color: $orange;
+				color: $white;
 
 				&:before {
-					border-color: $orange;
+					border-color: $white;
 				}
 			}
 		}
@@ -128,11 +128,10 @@
 				}
 
 				&:hover {
-					color: $orange;
-					background-color: rgba($orange, .1);
+					color: $white;
 
 						&:before {
-							border-color: $orange;
+							border-color: $white;
 						}
 				}
 		}

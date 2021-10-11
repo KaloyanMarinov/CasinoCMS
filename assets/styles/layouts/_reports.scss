@@ -38,7 +38,7 @@
 		}
 
 		&__details {
-			border: 2px solid #e2deea;
+			border: 2px solid #f7f7f7;
 
 				&:not(:last-child) {
 					margin-bottom: rem(35);
@@ -46,7 +46,7 @@
 
 				&__header {
 					font-size: 16px;
-					background-color: #e2deea;
+					background-color: #f7f7f7;
 
 						strong {
 							font-size: 18px;
@@ -62,7 +62,7 @@
 			font-size: 16px;
 
 				&:not(:last-child) {
-					border-bottom: 2px solid #e2deea;
+					border-bottom: 2px solid #f7f7f7;
 				}
 
 				.wmd-61 {
