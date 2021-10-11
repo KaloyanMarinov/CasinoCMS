@@ -268,19 +268,19 @@ gulp.task('images', function() {
 });
 
 // ### File Include
-gulp.task('fileinclude', async function() { // jshint ignore:line
-  gulp.src(path.source + 'html/pages/*.html')
+gulp.task('fileinclude', function() {
+  gulp.src('./*.html')
+    .pipe(flatten())
     .pipe(fileinclude({
       prefix: '@@',
-      basepath: path.source + 'html/pages/',
+      basepath: './templates/',
     }))
-    .pipe(gulp.dest('./'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('./html'));
 });
 
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
-gulp.task('clean', require('del').bind(null, [path.dist]));
+gulp.task('clean', require('del').bind(null, [path.dist, './html']));
 
 // ### Clean Scripts & Styles
 // `gulp cleanSS` - Deletes the build folder entirely.
@@ -303,7 +303,7 @@ gulp.task('watch', function() {
   gulp.watch([path.source + 'scripts/**/*'], gulp.series('scripts'));
   gulp.watch([path.source + 'fonts/**/*'], gulp.series('fonts'));
   gulp.watch([path.source + 'images/**/*'], gulp.series('images'));
-  gulp.watch([path.source + 'html/**/*'], gulp.series('fileinclude'));
+  gulp.watch(['./*.html', './templates/**/*'], gulp.series('fileinclude'));
   gulp.watch(['assets/manifest.json'], gulp.series('manifest'));
 });
 
@@ -319,7 +319,7 @@ gulp.task(
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task(
   'build',
-  gulp.series('styles', 'scripts', gulp.parallel('fonts', 'images'))
+  gulp.series('styles', 'scripts', gulp.parallel('fonts', 'images', 'fileinclude'))
 );
 
 // ### Gulp

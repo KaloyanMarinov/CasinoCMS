@@ -69,7 +69,7 @@
 									content: '';
 									@include element-center;
 									@include size(10px);
-									@extend .bg-red;
+									background: #EC5C29;
 									@extend .rounded-circle;
 									z-index: 2;
 									transform: translate(6px, -11px);

@@ -23,7 +23,8 @@ $colors: map-merge((
   "gray-200": $gray-200,
   "gray-500": $gray-500,
   "gray-700": $gray-700,
-  "purple-80": rgba($purple, .8)
+  "gray-800": $gray-800,
+  "purple-80": rgba($orange, .8)
 ), $colors);
 
 // Remove Theme Colors
@@ -62,7 +63,7 @@ $btn-colors: (
     background: $orange,
     border: transparent,
     hover-color: $white,
-    hover-background: $purple,
+    hover-background: darken($orange, 5%),
     hover-border: transparent
   ),
   'purple': (
@@ -70,7 +71,7 @@ $btn-colors: (
     background: $purple,
     border: transparent,
     hover-color: $white,
-    hover-background: #1f0d38,
+    hover-background: #1a191b,
     hover-border: transparent
   ),
   'red': (
