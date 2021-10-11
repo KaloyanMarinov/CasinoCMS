@@ -8,16 +8,18 @@ var flatten      = require('gulp-flatten');
 var fileinclude  = require('gulp-file-include');
 var gulp         = require('gulp');
 var gulpif       = require('gulp-if');
+var newer        = require('gulp-newer');
 var imagemin     = require('gulp-imagemin');
-var jshint       = require('gulp-jshint');
+var extReplace   = require("gulp-ext-replace");
 var lazypipe     = require('lazypipe');
 var less         = require('gulp-less');
 var merge        = require('merge-stream');
 var cssNano      = require('gulp-cssnano');
 var plumber      = require('gulp-plumber');
 var rev          = require('gulp-rev');
-var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
+var gcmq         = require('gulp-group-css-media-queries');
+var cleanCSS     = require('gulp-clean-css');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 
@@ -62,7 +64,7 @@ var enabled = {
   // Fail due to JSHint warnings only when `--production`
   failJSHint: argv.production,
   // Strip debug statments from javascript when `--production`
-  stripJSDebug: argv.production
+  stripJSDebug: argv.production,
 };
 
 // Path to the compiled assets manifest in the dist directory
@@ -76,6 +78,20 @@ var onError = function(err) {
 
 // ## Reusable Pipelines
 // See https://github.com/OverZealous/lazypipe
+
+// ### Write to rev manifest
+// If there are any revved files then write them to the rev manifest.
+// See https://github.com/sindresorhus/gulp-rev
+var writeToManifest = function(directory, done) {
+  return lazypipe()
+    .pipe(gulp.dest, path.dist + directory)
+    .pipe(browserSync.stream, {match: '**/*.{js,css}'})
+    .pipe(rev.manifest, revManifest, {
+      base: path.dist,
+      merge: true
+    })
+    .pipe(gulp.dest, path.dist)().on('end', done);
+};
 
 // ### CSS processing pipeline
 // Example
@@ -97,7 +113,7 @@ var cssTasks = function(filename) {
     })
     .pipe(function() {
       return gulpif('*.scss', sass({
-        outputStyle: 'expanded', // libsass doesn't support expanded yet
+        outputStyle: 'nested', // libsass doesn't support expanded yet
         precision: 10,
         includePaths: ['.'],
         errLogToConsole: !enabled.failStyleTask
@@ -106,11 +122,35 @@ var cssTasks = function(filename) {
     .pipe(concat, filename)
     .pipe(autoprefixer, {
       flexbox: true,
-      browsers: [
+      overrideBrowserslist: [
         'last 2 versions',
         'android 4',
         'opera 12'
       ]
+    })
+    .pipe(function() {
+      return gcmq();
+    })
+    .pipe(function () {
+      return cleanCSS({
+        compatibility: '10+',
+        level: {
+          2: {
+            mergeAdjacentRules: true,
+            mergeIntoShorthands: true,
+            mergeMedia: false,
+            mergeNonAdjacentRules: true,
+            mergeSemantically: false,
+            overrideProperties: true,
+            removeEmpty: true,
+            reduceNonAdjacentRules: true,
+            removeDuplicateFontRules: true,
+            removeDuplicateMediaBlocks: false,
+            removeDuplicateRules: true,
+            restructureRules: true,
+          }
+        }
+      });
     })
     .pipe(cssNano, {
       safe: true
@@ -123,6 +163,24 @@ var cssTasks = function(filename) {
         sourceRoot: 'assets/styles/'
       }));
     })();
+};
+
+var processStyles = function(done) {
+  var merged = merge();
+  manifest.forEachDependency('css', function(dep) {
+    var cssTasksInstance = cssTasks(dep.name);
+    if (!enabled.failStyleTask) {
+      cssTasksInstance.on('error', function(err) {
+        console.error(err.message);
+        this.emit('end');
+      });
+    }
+    merged.add(gulp.src(dep.globs, {base: 'styles'})
+      .pipe(plumber({errorHandler: onError}))
+      .pipe(cssTasksInstance));
+  });
+  return merged
+    .pipe(writeToManifest('styles', done));
 };
 
 // ### JS processing pipeline
@@ -153,49 +211,7 @@ var jsTasks = function(filename) {
     })();
 };
 
-// ### Write to rev manifest
-// If there are any revved files then write them to the rev manifest.
-// See https://github.com/sindresorhus/gulp-rev
-var writeToManifest = function(directory) {
-  return lazypipe()
-    .pipe(gulp.dest, path.dist + directory)
-    .pipe(browserSync.stream, {match: '**/*.{js,css}'})
-    .pipe(rev.manifest, revManifest, {
-      base: path.dist,
-      merge: true
-    })
-    .pipe(gulp.dest, path.dist)();
-};
-
-// ## Gulp tasks
-// Run `gulp -T` for a task summary
-
-// ### Styles
-// `gulp styles` - Compiles, combines, and optimizes Bower CSS and project CSS.
-// By default this task will only log a warning if a precompiler error is
-// raised. If the `--production` flag is set: this task will fail outright.
-gulp.task('styles', function() {
-  var merged = merge();
-  manifest.forEachDependency('css', function(dep) {
-    var cssTasksInstance = cssTasks(dep.name);
-    if (!enabled.failStyleTask) {
-      cssTasksInstance.on('error', function(err) {
-        console.error(err.message);
-        this.emit('end');
-      });
-    }
-    merged.add(gulp.src(dep.globs, {base: 'styles'})
-      .pipe(plumber({errorHandler: onError}))
-      .pipe(cssTasksInstance));
-  });
-  return merged
-    .pipe(writeToManifest('styles'));
-});
-
-// ### Scripts
-// `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
-// and project JS.
-gulp.task('scripts', ['jshint'], function() {
+var processScripts = function(done) {
   var merged = merge();
   manifest.forEachDependency('js', function(dep) {
     merged.add(
@@ -205,8 +221,22 @@ gulp.task('scripts', ['jshint'], function() {
     );
   });
   return merged
-    .pipe(writeToManifest('scripts'));
-});
+    .pipe(writeToManifest('scripts', done));
+};
+
+// ## Gulp tasks
+// Run `gulp -T` for a task summary
+
+// ### Styles
+// `gulp styles` - Compiles, combines, and optimizes Bower CSS and project CSS.
+// By default this task will only log a warning if a precompiler error is
+// raised. If the `--production` flag is set: this task will fail outright.
+gulp.task('styles', gulp.series(processStyles));
+
+// ### Scripts
+// `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
+// and project JS.
+gulp.task('scripts', gulp.series(processScripts));
 
 // ### Fonts
 // `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
@@ -222,44 +252,39 @@ gulp.task('fonts', function() {
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
   return gulp.src(globs.images)
+    .pipe(newer(path.dist + 'images'))
     .pipe(imagemin([
       imagemin.jpegtran({progressive: true}),
       imagemin.gifsicle({interlaced: true}),
       imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo({plugins: [
         {removeUnknownsAndDefaults: false},
-        {cleanupIDs: false}
+        {cleanupIDs: false},
+        {removeDimensions: false}
       ]})
     ]))
     .pipe(gulp.dest(path.dist + 'images'))
     .pipe(browserSync.stream());
 });
 
-// ### JSHint
-// `gulp jshint` - Lints configuration JSON and project JS.
-gulp.task('jshint', function() {
-  return gulp.src([
-    'gulpfile.js'
-  ].concat(project.js))
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
-});
-
 // ### File Include
-gulp.task('fileinclude', function() {
-  gulp.src(config.html)
-    .pipe(flatten())
+gulp.task('fileinclude', async function() { // jshint ignore:line
+  gulp.src(path.source + 'html/pages/*.html')
     .pipe(fileinclude({
       prefix: '@@',
-      basepath: './templates/',
+      basepath: path.source + 'html/pages/',
     }))
-    .pipe(gulp.dest('./html'));
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.stream());
 });
 
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
-gulp.task('clean', require('del').bind(null, [path.dist, './html']));
+gulp.task('clean', require('del').bind(null, [path.dist]));
+
+// ### Clean Scripts & Styles
+// `gulp cleanSS` - Deletes the build folder entirely.
+gulp.task('cleanSS', require('del').bind(null, [path.dist + 'scripts', path.dist + 'styles']));
 
 // ### Watch
 // `gulp watch` - Use BrowserSync to proxy your dev server and synchronize code
@@ -270,29 +295,33 @@ gulp.task('clean', require('del').bind(null, [path.dist, './html']));
 gulp.task('watch', function() {
   browserSync.init({
     server: {
-      baseDir: "./"
-    }
+      baseDir: "./",
+    },
+    open: false
   });
-  gulp.watch([path.source + 'styles/**/*'], ['styles']);
-  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
-  gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
-  gulp.watch([path.source + 'images/**/*'], ['images']);
-  gulp.watch([config.html, './templates/**/*'], ['fileinclude']);
-  gulp.watch(['assets/manifest.json'], ['build']);
+  gulp.watch([path.source + 'styles/**/*'], gulp.series('styles'));
+  gulp.watch([path.source + 'scripts/**/*'], gulp.series('scripts'));
+  gulp.watch([path.source + 'fonts/**/*'], gulp.series('fonts'));
+  gulp.watch([path.source + 'images/**/*'], gulp.series('images'));
+  gulp.watch([path.source + 'html/**/*'], gulp.series('fileinclude'));
+  gulp.watch(['assets/manifest.json'], gulp.series('manifest'));
 });
+
+// ### manifest
+// `gulp manifest` - Run all the manifest tasks.
+gulp.task(
+  'manifest',
+  gulp.series('cleanSS', 'styles', 'scripts')
+);
 
 // ### Build
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
-gulp.task('build', function(callback) {
-  runSequence('styles',
-              'scripts', 'fileinclude',
-              ['fonts', 'images'],
-              callback);
-});
+gulp.task(
+  'build',
+  gulp.series('styles', 'scripts', gulp.parallel('fonts', 'images'))
+);
 
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
-gulp.task('default', ['clean'], function() {
-  gulp.start('build');
-});
+gulp.task('default', gulp.series('clean', 'build'));
