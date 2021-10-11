@@ -1,0 +1,120 @@
+
+
+.pagination {
+	@extend .d-flex;
+
+		&__item {
+			@include size($pagination-size);
+			color: $pagination-color;
+			font-size: $pagination-font-size;
+			background-color: $pagination-bgcolor;
+			border-radius: $pagination-border-radius;
+			text-align: center;
+			line-height: $pagination-size;
+
+				&:not(:last-child) {
+					margin-right: $pagination-item-margin;
+				}
+				
+				&:hover,
+				&.active {
+					color: $pagination-active-color;
+					background-color: $pagination-active-bgcolor;
+				}
+		}
+
+		&__prev,
+		&__next {
+			position: relative;
+			@include size($pagination-size);
+			border-radius: $pagination-border-radius;
+
+				&:before,
+				&:after {
+					content: '';
+					@include element-center;
+					@include size(18px, 2px);
+					background-color: #c1bfc5;
+				}
+
+				&:hover {
+					background-color: $pagination-active-bgcolor;
+
+						&:before,
+						&:after {
+							background-color: $pagination-active-color;
+						}
+				}
+		}
+
+		&__prev {
+			margin-right: $pagination-item-margin;
+
+				&:before {
+					transform: translate(-2px, 6px) rotate(45deg);
+				}
+
+				&:after {
+					transform: translate(-2px, -6px) rotate(-45deg);
+				}
+		}
+
+		&__next {
+
+				&:before {
+					transform: translate(2px, -6px) rotate(45deg);
+				}
+
+				&:after {
+					transform: translate(2px, 6px) rotate(-45deg);
+				}
+		}
+
+		&__first,
+		&__end {
+			position: relative;
+			@include size($pagination-size);
+			border-radius: $pagination-border-radius;
+
+				&:before,
+				&:after {
+					content: '';
+					@include element-center;
+					@include size(18px);
+					border-left: 2px solid #c1bfc5;
+					border-top: 2px solid #c1bfc5;
+				}
+
+				&:hover {
+					background-color: $pagination-active-bgcolor;
+
+						&:before,
+						&:after {
+							border-color: $pagination-active-color;
+						}
+				}
+		}
+
+		&__first {
+			margin-right: $pagination-item-margin;
+
+				&:before {
+					transform: translate(0px, 0) rotate(-45deg);
+				}
+
+				&:after {
+					transform: translate(8px, 0) rotate(-45deg);
+				}
+		}
+
+		&__end {
+
+			&:before {
+				transform: translate(0px, 0) rotate(135deg);
+			}
+
+			&:after {
+				transform: translate(-8px, 0) rotate(135deg);
+			}
+		}
+}

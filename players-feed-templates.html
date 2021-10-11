@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Live Feed Phrases" })
+  <body>
+
+    @@include('nav.html')
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header.html', { "search-open": false })
+      @@include('search.html')
+
+      <div class="w-100 pt-sm-30 pt-20">
+        <div class="container">
+          <ul class="breadcrumb mb-15">
+            <a href="dashboard.html" class="breadcrumb__item">Home</a>
+            <a href="#" class="breadcrumb__item">Players feed</a>
+            <span class="breadcrumb__item active">Live Feed Phrases</span>
+          </ul>
+
+          <div class="row align-items-center mb-15">
+            <div class="col">
+              <h1 class="h1-rem-sm h2">Live Feed Phrases</h1>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-auto">
+              <a href="edit-players-feed-templates.html" class="btn btn--round btn--orange btn--add w-100 font-weight-black"><i class="wmd wmd-24 mr-sm-20"></i><span class="d-sm-inline d-none">Add New</span></a>
+            </div>
+          </div>
+
+          <div class="row align-items-sm-center">
+            <div class="col-xl-2 col-md-3 col-sm-4 col-12 mb-15">
+              <div class="row align-items-center mx-0">
+                <div class="col-auto px-0 d-sm-block d-none"><label class="mr-10">Show:</label></div>
+                <div class="col px-0">
+                  <select class="form__control">
+                    <option value="">10 per page</option>
+                    <option value="">20 per page</option>
+                    <option value="">30 per page</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-auto col-12 mb-15">
+              @@include('dropdown-filter.html', { "title": "Filter by Action" })
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-12 mb-15 ml-sm-auto">
+              <input type="text" class="form__control" placeholder="Search">
+            </div>
+          </div>
+
+          <div class="row justify-content-between d-sm-none mb-20">
+            <div class="col-auto">
+              <button class="table__view text-uppercase font-weight-bold active" data-toggle="table-view" data-target="#games" data-view="table" aria-expanded="true">
+                table
+                <i class="wmd wmd-26 ml-10"></i>
+              </button>
+            </div>
+            <div class="col-auto">
+              <button class="table__view text-uppercase font-weight-bold" data-toggle="table-view" data-target="#games" data-view="card" aria-expanded="false">
+                Card
+                <i class="aria-false wmd wmd-27 ml-10"></i>
+                <i class="aria-true wmd wmd-28 ml-10"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive-shadow">
+            <div class="table-responsive">
+              <table class="table table--striped table--hover table--rounded" id="games">
+                <thead class="thead--light">
+                  <tr>
+                    <th><button class="table__sort table__sort--up">Actions</button></th>
+                    <th><button class="table__sort">Description</button></th>
+                    <th class="text-center">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  @@loop('playersfeed/templates/template-row.html', [
+                    { "actions" : "login", "desc": "Best of luck today [NAME]!" },
+                    { "actions" : "login", "desc": "Cheerio! Welcome back [NAME]!" },
+                    { "actions" : "login", "desc": "Hola! We are glad to have you back [NAME]!" },
+                    { "actions" : "logout", "desc": "Goodbye for now [NAME]." },
+                    { "actions" : "logout", "desc": "Toodeloo! Thanks for stopping by [NAME]." },
+                    { "actions" : "logout", "desc": "Best of luck today [NAME]!" },
+                    { "actions" : "play", "desc": "[NAME] opened [GAME], good luck!" },
+                    { "actions" : "play", "desc": "Best of luck today [NAME]!" },
+                    { "actions" : "login", "desc": "Time to play [GAME], good luck [NAME]!" },
+                    { "actions" : "login", "desc": "Best of luck today [NAME]!" }
+                  ])
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          @@include('pagination.html')
+        </div>
+      </div>
+
+       @@include('footer.html')
+    </main>
+    
+    @@include('foot.html')
+  </body>
+</html>

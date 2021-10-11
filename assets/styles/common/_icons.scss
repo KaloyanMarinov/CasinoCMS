@@ -1,0 +1,623 @@
+$wmd-1: "\e900";
+$wmd-2: "\e901";
+$wmd-3: "\e902";
+$wmd-4: "\e903";
+$wmd-5: "\e904";
+$wmd-6: "\e905";
+$wmd-7: "\e906";
+$wmd-8: "\e907";
+$wmd-9: "\e908";
+$wmd-10: "\e909";
+$wmd-11: "\e90a";
+$wmd-12: "\e90b";
+$wmd-13: "\e90c";
+$wmd-14: "\e90d";
+$wmd-15: "\e90e";
+$wmd-16: "\e90f";
+$wmd-17: "\e910";
+$wmd-18: "\e911";
+$wmd-19: "\e912";
+$wmd-20: "\e913";
+$wmd-21: "\e914";
+$wmd-22: "\e915";
+$wmd-23: "\e916";
+$wmd-24: "\e917";
+$wmd-25: "\e918";
+$wmd-26: "\e919";
+$wmd-27: "\e91a";
+$wmd-28: "\e91b";
+$wmd-29: "\e91c";
+$wmd-30: "\e91d";
+$wmd-31: "\e91e";
+$wmd-32: "\e91f";
+$wmd-33: "\e920";
+$wmd-34: "\e921";
+$wmd-35: "\e922";
+$wmd-36: "\e923";
+$wmd-37: "\e924";
+$wmd-38: "\e925";
+$wmd-39: "\e926";
+$wmd-40: "\e927";
+$wmd-41: "\e928";
+$wmd-42: "\e929";
+$wmd-43: "\e92a";
+$wmd-44: "\e92b";
+$wmd-45: "\e92c";
+$wmd-46: "\e92d";
+$wmd-47: "\e92e";
+$wmd-48: "\e92f";
+$wmd-49: "\e930";
+$wmd-50: "\e931";
+$wmd-51: "\e932";
+$wmd-52: "\e933";
+$wmd-53: "\e934";
+$wmd-54: "\e935";
+$wmd-55: "\e936";
+$wmd-56: "\e937";
+$wmd-57: "\e938";
+$wmd-58: "\e939";
+$wmd-59: "\e93a";
+$wmd-60: "\e93b";
+$wmd-61: "\e93c";
+$wmd-62: "\e93d";
+$wmd-63: "\e93e";
+$wmd-64: "\e93f";
+$wmd-65: "\e940";
+$wmd-66: "\e941";
+$wmd-67: "\e942";
+$wmd-68: "\e943";
+$wmd-69: "\e944";
+$wmd-70: "\e945";
+$wmd-71: "\e946";
+$wmd-72: "\e947";
+$wmd-73: "\e948";
+$wmd-74: "\e949";
+$wmd-75: "\e94a";
+$wmd-76: "\e94b";
+$wmd-77: "\e94c";
+$wmd-78: "\e94d";
+$wmd-79: "\e94e";
+$wmd-80: "\e94f";
+$wmd-81: "\e950";
+$wmd-82: "\e951";
+$wmd-83: "\e952";
+$wmd-84: "\e953";
+$wmd-85: "\e954";
+$wmd-86: "\e955";
+$wmd-87: "\e956";
+$wmd-88: "\e957";
+$wmd-89: "\e958";
+$wmd-90: "\e959";
+$wmd-91: "\e95a";
+$wmd-92: "\e95b";
+$wmd-93: "\e95c";
+$wmd-94: "\e95d";
+$wmd-95: "\e95e";
+$wmd-96: "\e95f";
+$wmd-97: "\e960";
+$wmd-98: "\e961";
+$wmd-99: "\e962";
+
+$icomoon-font-family: "wmd" !default;
+$icomoon-font-path: $font-path !default;
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?y6fjc8') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?y6fjc8') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?y6fjc8##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wmd {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wmd-1 {
+  &:before {
+    content: $wmd-1; 
+  }
+}
+.wmd-2 {
+  &:before {
+    content: $wmd-2; 
+  }
+}
+.wmd-3 {
+  &:before {
+    content: $wmd-3; 
+  }
+}
+.wmd-4 {
+  &:before {
+    content: $wmd-4; 
+  }
+}
+.wmd-5 {
+  &:before {
+    content: $wmd-5; 
+  }
+}
+.wmd-6 {
+  &:before {
+    content: $wmd-6; 
+  }
+}
+.wmd-7 {
+  &:before {
+    content: $wmd-7; 
+  }
+}
+.wmd-8 {
+  &:before {
+    content: $wmd-8; 
+  }
+}
+.wmd-9 {
+  &:before {
+    content: $wmd-9; 
+  }
+}
+.wmd-10 {
+  &:before {
+    content: $wmd-10; 
+  }
+}
+.wmd-11 {
+  &:before {
+    content: $wmd-11; 
+  }
+}
+.wmd-12 {
+  &:before {
+    content: $wmd-12; 
+  }
+}
+.wmd-13 {
+  &:before {
+    content: $wmd-13; 
+  }
+}
+.wmd-14 {
+  &:before {
+    content: $wmd-14; 
+  }
+}
+.wmd-15 {
+  &:before {
+    content: $wmd-15; 
+  }
+}
+.wmd-16 {
+  &:before {
+    content: $wmd-16; 
+  }
+}
+.wmd-17 {
+  &:before {
+    content: $wmd-17; 
+  }
+}
+.wmd-18 {
+  &:before {
+    content: $wmd-18; 
+  }
+}
+.wmd-19 {
+  &:before {
+    content: $wmd-19; 
+  }
+}
+.wmd-20 {
+  &:before {
+    content: $wmd-20; 
+  }
+}
+.wmd-21 {
+  &:before {
+    content: $wmd-21; 
+  }
+}
+.wmd-22 {
+  &:before {
+    content: $wmd-22; 
+  }
+}
+.wmd-23 {
+  &:before {
+    content: $wmd-23; 
+  }
+}
+.wmd-24 {
+  &:before {
+    content: $wmd-24; 
+  }
+}
+.wmd-25 {
+  &:before {
+    content: $wmd-25; 
+  }
+}
+.wmd-26 {
+  &:before {
+    content: $wmd-26; 
+  }
+}
+.wmd-27 {
+  &:before {
+    content: $wmd-27; 
+  }
+}
+.wmd-28 {
+  &:before {
+    content: $wmd-28; 
+  }
+}
+.wmd-29 {
+  &:before {
+    content: $wmd-29; 
+  }
+}
+.wmd-30 {
+  &:before {
+    content: $wmd-30; 
+  }
+}
+.wmd-31 {
+  &:before {
+    content: $wmd-31; 
+  }
+}
+.wmd-32 {
+  &:before {
+    content: $wmd-32; 
+  }
+}
+.wmd-33 {
+  &:before {
+    content: $wmd-33; 
+  }
+}
+.wmd-34 {
+  &:before {
+    content: $wmd-34; 
+  }
+}
+.wmd-35 {
+  &:before {
+    content: $wmd-35; 
+  }
+}
+.wmd-36 {
+  &:before {
+    content: $wmd-36; 
+  }
+}
+.wmd-37 {
+  &:before {
+    content: $wmd-37; 
+  }
+}
+.wmd-38 {
+  &:before {
+    content: $wmd-38; 
+  }
+}
+.wmd-39 {
+  &:before {
+    content: $wmd-39; 
+  }
+}
+.wmd-40 {
+  &:before {
+    content: $wmd-40; 
+  }
+}
+.wmd-41 {
+  &:before {
+    content: $wmd-41; 
+  }
+}
+.wmd-42 {
+  &:before {
+    content: $wmd-42; 
+  }
+}
+.wmd-43 {
+  &:before {
+    content: $wmd-43; 
+  }
+}
+.wmd-44 {
+  &:before {
+    content: $wmd-44; 
+  }
+}
+.wmd-45 {
+  &:before {
+    content: $wmd-45; 
+  }
+}
+.wmd-46 {
+  &:before {
+    content: $wmd-46; 
+  }
+}
+.wmd-47 {
+  &:before {
+    content: $wmd-47; 
+  }
+}
+.wmd-48 {
+  &:before {
+    content: $wmd-48; 
+  }
+}
+.wmd-49 {
+  &:before {
+    content: $wmd-49; 
+  }
+}
+.wmd-50 {
+  &:before {
+    content: $wmd-50; 
+  }
+}
+.wmd-51 {
+  &:before {
+    content: $wmd-51; 
+  }
+}
+.wmd-52 {
+  &:before {
+    content: $wmd-52; 
+  }
+}
+.wmd-53 {
+  &:before {
+    content: $wmd-53; 
+  }
+}
+.wmd-54 {
+  &:before {
+    content: $wmd-54; 
+  }
+}
+.wmd-55 {
+  &:before {
+    content: $wmd-55; 
+  }
+}
+.wmd-56 {
+  &:before {
+    content: $wmd-56; 
+  }
+}
+.wmd-57 {
+  &:before {
+    content: $wmd-57; 
+  }
+}
+.wmd-58 {
+  &:before {
+    content: $wmd-58; 
+  }
+}
+.wmd-59 {
+  &:before {
+    content: $wmd-59; 
+  }
+}
+.wmd-60 {
+  &:before {
+    content: $wmd-60; 
+  }
+}
+.wmd-61 {
+  &:before {
+    content: $wmd-61; 
+  }
+}
+.wmd-62 {
+  &:before {
+    content: $wmd-62; 
+  }
+}
+.wmd-63 {
+  &:before {
+    content: $wmd-63; 
+  }
+}
+.wmd-64 {
+  &:before {
+    content: $wmd-64; 
+  }
+}
+.wmd-65 {
+  &:before {
+    content: $wmd-65; 
+  }
+}
+.wmd-66 {
+  &:before {
+    content: $wmd-66; 
+  }
+}
+.wmd-67 {
+  &:before {
+    content: $wmd-67; 
+  }
+}
+.wmd-68 {
+  &:before {
+    content: $wmd-68; 
+  }
+}
+.wmd-69 {
+  &:before {
+    content: $wmd-69; 
+  }
+}
+.wmd-70 {
+  &:before {
+    content: $wmd-70; 
+  }
+}
+.wmd-71 {
+  &:before {
+    content: $wmd-71; 
+  }
+}
+.wmd-72 {
+  &:before {
+    content: $wmd-72; 
+  }
+}
+.wmd-73 {
+  &:before {
+    content: $wmd-73; 
+  }
+}
+.wmd-74 {
+  &:before {
+    content: $wmd-74; 
+  }
+}
+.wmd-75 {
+  &:before {
+    content: $wmd-75; 
+  }
+}
+.wmd-76 {
+  &:before {
+    content: $wmd-76; 
+  }
+}
+.wmd-77 {
+  &:before {
+    content: $wmd-77; 
+  }
+}
+.wmd-78 {
+  &:before {
+    content: $wmd-78; 
+  }
+}
+.wmd-79 {
+  &:before {
+    content: $wmd-79; 
+  }
+}
+.wmd-80 {
+  &:before {
+    content: $wmd-80; 
+  }
+}
+.wmd-81 {
+  &:before {
+    content: $wmd-81; 
+  }
+}
+.wmd-82 {
+  &:before {
+    content: $wmd-82; 
+  }
+}
+.wmd-83 {
+  &:before {
+    content: $wmd-83; 
+  }
+}
+.wmd-84 {
+  &:before {
+    content: $wmd-84; 
+  }
+}
+.wmd-85 {
+  &:before {
+    content: $wmd-85; 
+  }
+}
+.wmd-86 {
+  &:before {
+    content: $wmd-86; 
+  }
+}
+.wmd-87 {
+  &:before {
+    content: $wmd-87; 
+  }
+}
+.wmd-88 {
+  &:before {
+    content: $wmd-88; 
+  }
+}
+.wmd-89 {
+  &:before {
+    content: $wmd-89; 
+  }
+}
+.wmd-90 {
+  &:before {
+    content: $wmd-90; 
+  }
+}
+.wmd-91 {
+  &:before {
+    content: $wmd-91; 
+  }
+}
+.wmd-92 {
+  &:before {
+    content: $wmd-92; 
+  }
+}
+.wmd-93 {
+  &:before {
+    content: $wmd-93; 
+  }
+}
+.wmd-94 {
+  &:before {
+    content: $wmd-94; 
+  }
+}
+.wmd-95 {
+  &:before {
+    content: $wmd-95; 
+  }
+}
+.wmd-96 {
+  &:before {
+    content: $wmd-96; 
+  }
+}
+.wmd-97 {
+  &:before {
+    content: $wmd-97; 
+  }
+}
+.wmd-98 {
+  &:before {
+    content: $wmd-98; 
+  }
+}
+.wmd-99 {
+  &:before {
+    content: $wmd-99; 
+  }
+}

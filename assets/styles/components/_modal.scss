@@ -1,0 +1,19 @@
+.modal-xl { max-width: $modal-xl; }
+
+.modal-header {
+	background-color: #f2f2f2;
+}
+.modal.show ~ .select2-container {
+	z-index: 2000;
+}
+
+.modal-content {
+		
+		.wmd-4 {
+			font-size: 10px !important;
+		}
+
+		.wmd-98 {
+			font-size: 23px;
+		}
+}

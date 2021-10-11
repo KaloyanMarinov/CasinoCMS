@@ -1,0 +1,381 @@
+.media {
+
+		&__library {
+
+				&.show ~ .modal-backdrop {
+					background-color: $purple;
+					opacity: .95;
+				}
+
+				.simplebar-track.vertical {
+					right: 13px;
+					width: 4px;
+					background-color: #f4f3f5;
+					border-radius: 2px;
+
+						.simplebar-scrollbar {
+							right: 0;
+							width: 100%;
+
+								&:before {
+									background-color: #c9c5cf;
+									border-radius: 2px;
+								}
+						}
+				}
+
+				.simplebar-track.horizontal {
+					display: none;
+				}
+
+				&__dialog {
+					position: absolute;
+					top: 34px;
+					right: 0;
+					bottom: 34px;
+					left: 0;
+					max-width: none;
+					margin: 0;
+					pointer-events: auto;
+				}
+
+				&__container {
+					position: relative;
+					border-radius: $border-radius;
+					overflow: hidden;
+
+						.wrapper & {
+							
+								@include media-breakpoint-up(lg) {
+									height: calc(100vh - 230px);
+								}
+
+								@include media-breakpoint-only(md) {
+									height: calc(100vh - 200px);
+								}
+
+								@include media-breakpoint-only(sm) {
+									height: calc(100vh - 180px);
+								}
+
+								@include media-breakpoint-down(xs) {
+									height: calc(100vh - 205px);
+								}
+						}
+				}
+
+				&__toolbar {
+					padding: 15px;
+					background-color: #f8f7f9;
+				}
+
+				&__content {
+					position: absolute;
+					top: 70px;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					transition: right 500ms ease-in-out;
+
+						.has-selected & {
+							background-color: rgba($purple, .1);
+							@include media-breakpoint-up(lg) {
+								right: percentage(370 / 1170);
+							}
+							@include media-breakpoint-only(md) {
+								right: 360px;
+							}
+							@include media-breakpoint-only(sm) {
+								right: 355px;
+							}
+
+								.simplebar-track.vertical {
+									background-color: rgba(#1f0d38, .05);
+
+										.simplebar-scrollbar:before {
+											background-color: rgba(#1f0d38, .2);
+										}
+								}
+						}
+				}
+
+				&__simplebar {
+					position: absolute;
+					top: 30px;
+					right: 0;
+					bottom: 30px;
+					left: 0;
+					overflow: auto;
+				}
+
+				&__attachments {
+					@include media-breakpoint-up(sm) { padding: 0 0 0 30px }
+					@include media-breakpoint-down(xs) { padding: 0 0 0 20px }
+				}
+
+				&__attachment {
+					position: relative;
+					float: left;
+					margin-bottom: 20px;
+					padding-right: 25px;
+					@include media-breakpoint-up(xl) { width: 222.5px }
+					@include media-breakpoint-only(lg) { width: 189px }
+					@include media-breakpoint-only(md) { width: 180px }
+					@include media-breakpoint-only(sm) { width: 178px }
+					@include media-breakpoint-down(xs) { width: 50%; }
+					
+				}
+
+				&__btn-attachment {
+					position: relative;
+					display: block;
+					width: 100%;
+
+						&:before {
+							content: '';
+							@include element-center;
+							border-radius: $border-radius;
+							border: 2px solid transparent;
+							z-index: 5;
+							transition: $default-transition;
+						}
+
+						&:not(.selected):hover {
+
+								&:before {
+									border-color: #d9d4e1;
+								}
+						}
+				}
+
+				&__btn-upload {
+					position: relative;
+					display: block;
+					width: 100%;
+					text-align: center;
+					cursor: pointer;
+					@include media-breakpoint-down(xs) {
+
+							img {
+								width: 50px;
+							}
+					}
+
+
+						input {
+							position: absolute;
+							top: 0;
+							left: 0;
+							visibility: hidden;
+							opacity: 0;
+						}
+
+
+				}
+
+				&__upload {
+					display: block;
+				}
+
+				&__thumbnail {
+					display: block;
+					position: relative;
+					height: 0;
+					overflow: hidden;
+					border-radius: $border-radius;
+					padding-top: percentage(144 / 164);
+					transition: $default-transition;
+
+						.media__library__btn-attachment.selected & {
+							box-shadow: inset 0 0 0 2px $orange;
+						}
+
+						&__centered {
+							@include element-center;
+							border-radius: $border-radius;
+							overflow: hidden;
+							transition: $default-transition;
+
+								img {
+									@include element-center(image);
+									max-width: none;
+									max-height: 100%;
+									border-radius: $border-radius;
+									background-color: #ddd;
+									background-image: linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4),linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4);
+									background-position: 0 0, 5px 5px;
+									background-size: 10px 10px;
+								}
+
+								.media__library__btn-attachment:not(.selected):hover & {
+									transform: scale(0.93);
+									border-radius: 6px;
+								}
+
+								.media__library__btn-attachment.selected & {
+									transform: scale(0.93);
+									border-radius: 6px;
+								}
+						}
+
+						&__upload {
+							@include element-center;
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							border: 2px dashed rgba(#060707, .1);
+							border-radius: $border-radius;
+							transition: $default-transition;
+
+								.media__library__btn-upload:hover & {
+									border-color: $purple;
+								}
+
+								&__drag {
+									display: block;
+									margin-top: 10px;
+									text-transform: uppercase;
+									font-size: 13px;
+									line-height: (16 / 13);
+									letter-spacing: -1px;
+									font-weight: $font-weight-bold;
+								}
+
+								&__link {
+									display: block;
+									color: $purple;
+									text-decoration: underline;
+								}
+						}
+				}
+
+				&__checkmark {
+					position: absolute;
+					top: 16px;
+					right: 16px;
+					@include size(28px);
+					line-height: 30px;
+					font-size: 11px;
+					color: $white;
+					text-align: center;
+					border-radius: 50%;
+					z-index: 2;
+					background-color: $orange;
+					transition: $default-transition;
+
+						.media__library__btn-attachment:not(.selected) & {
+							opacity: 0;
+						}
+				}
+
+				&__name {
+					display: block;
+					color: rgba($black, .7);
+					padding: 15px 10px;
+					font-size: 16px;
+					font-weight: normal;
+					text-align: center;
+
+						.media__library__btn-attachment:not(.selected):hover &,
+						.media__library__btn-upload:hover & {
+							color: $black;
+						}
+				}
+
+				&__sidebar {
+					position: absolute;
+					bottom: 0;
+					background-color: #fff;
+					transition: right 500ms ease-in-out, width 500ms ease-in-out;
+					@include media-breakpoint-up(sm) {
+						top: 70px;
+					}
+					@include media-breakpoint-up(lg) {
+						right: percentage(-370 / 1170);
+						width: percentage(370 / 1170);
+					}
+					@include media-breakpoint-only(md) {
+						right: -360px;
+						width: 360px;
+					}
+					@include media-breakpoint-only(sm) {
+						right: -355px;
+						width: 355px;
+					}
+					@include media-breakpoint-down(xs) {
+						top: 0;
+						right: -100%;
+						width: 100%;
+					}
+
+						.has-selected & {
+							right: 0;
+						}
+
+						&__close {
+							margin: 7px;
+						}
+						
+						// .simplebar-content,
+						// .simplebar-scroll-content {
+						// 	padding: 0 !important;
+						// 	margin: 0 !important;
+						// }
+
+						&__content {
+							margin-left: 30px;
+							@include media-breakpoint-up(xl) { width: 373px; }
+							@include media-breakpoint-only(lg) { width: 310px; }
+							@include media-breakpoint-only(md) { width: 300px; }
+							@include media-breakpoint-only(sm) { width: 295px; }
+							@include media-breakpoint-down(xs) { margin-right: 30px; }
+						}
+
+						&__preview {
+							display: block;
+							position: relative;
+							height: 0;
+							overflow: hidden;
+							border-radius: $border-radius;
+							padding-top: percentage(180 / 310);
+							transition: $default-transition;
+
+								img {
+									@include element-center(image);
+									max-width: none;
+									max-height: 100%;
+									border-radius: $border-radius;
+									background-color: #eee;
+									background-image: linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4),linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4);
+									background-position: 0 0, 7px 7px;
+									background-size: 15px 15px;
+								}
+						}
+
+						.form__group {
+							padding-left: $input-border-width;
+							padding-right: $input-border-width;
+						}
+				}
+
+				&__stats {
+					color: $gray-400;
+
+						span {
+							color: #333;
+						}
+
+						.wmd {
+							display: inline-block;
+							margin-right: 10px;
+							text-align: center;
+							width: 16px;
+							color: rgba($black, .2);
+						}
+
+						.wmd-57 { font-size: 12px }
+						.wmd-59 { font-size: 15px }
+				}
+		}
+}

@@ -1,0 +1,302 @@
+
+.table {
+	width: 100%;
+    
+    th,
+  	td {
+  		padding: $table-cell-padding-y $table-cell-padding-x;
+  	}
+
+    tr {
+      background-color: $table-bg;
+    }
+
+    a {
+
+        &:not(.btn):hover {
+          text-decoration: underline;
+        }
+    }
+
+    .wmd-17 { font-size: 18px; }
+    .wmd-18 { font-size: 17px; }
+
+    &--striped {
+      tbody tr:nth-of-type(#{$table-striped-order}) {
+        background-color: $table-accent-bg;
+      }
+    }
+
+    &--bordered {
+      box-shadow: 0 0 0 2px #e2deea;
+      border-radius: $table-border-radius;
+
+
+        // thead {
+
+        //     th {
+        //       border-top: 2px solid #e2deea;
+
+        //         &:first-child {
+        //           border-left: 2px solid #e2deea;
+        //         }
+        //     }
+        // }
+
+        tbody tr:not(:last-child) {
+          border-bottom: 2px solid #e2deea;
+        }
+    }
+
+    &--hover {
+      tbody tr:hover {
+        background-color: $table-hover-bg;
+      }
+    }
+
+  	&--border-bottom {
+
+  			tbody {
+
+  					tr {
+
+  							&:not(:last-child) {
+  								border-bottom: $table-border-width solid $table-border-color;
+  							}
+  					}
+        }
+    }
+
+    &__sort {
+      position: relative;
+      font-weight: inherit;
+
+        &--down {
+          padding-right: 20px;
+          background: $table-sort-down no-repeat center right;
+          background-size: 10px 7px;
+        }
+
+        &--up {
+          padding-right: 20px;
+          background: $table-sort-up no-repeat center right;
+          background-size: 10px 7px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+
+        &--rounded {
+            
+            thead {
+
+                th {
+
+                    &:first-child {
+                      border-top-left-radius: $table-border-radius;
+                    }
+
+                    &:last-child {
+                      border-top-right-radius: $table-border-radius;
+                    }
+                }
+            }
+
+            tbody {
+
+                &:first-child {
+
+                    > tr:first-child td {
+
+                        &:first-child {
+                          border-top-left-radius: $table-border-radius;
+                        }
+
+                        &:last-child {
+                          border-top-right-radius: $table-border-radius;
+                        }
+                    }
+                }
+
+                &:last-child {
+
+                    > tr:last-child td {
+
+                        &:first-child {
+                          border-bottom-left-radius: $table-border-radius;
+                        }
+
+                        &:last-child {
+                          border-bottom-right-radius: $table-border-radius;
+                        }
+                    }
+                }
+            }
+
+            tfoot {
+
+                > tr:last-child td {
+
+                    &:first-child {
+                      border-bottom-left-radius: $table-border-radius;
+                    }
+
+                    &:last-child {
+                      border-bottom-right-radius: $table-border-radius;
+                    }
+                }
+            }
+        }
+    }
+
+        
+    @include media-breakpoint-down(xs) {
+
+
+        &-responsive {
+          overflow: auto;
+          max-width: 100%;
+
+            table:not(.table--card),
+            .table:not(.table--card) {
+              min-width: $table-responsive;
+            }
+
+            &-shadow:not(.disabled) {
+              position: relative;
+              margin-left: -20px;
+              margin-right: -20px;
+
+                &:before {
+                  content: '';
+                  @include element-center(tag, true, true, true, false);
+                  width: 20px;
+                  @include gradient-x(rgba(#f6f5f8, .2), rgba(#f6f5f8, 1), 0, 100%);
+                  z-index: 2;
+                }
+            }
+        }
+
+        &--card {
+          display: block;
+          // padding-left: 20px;
+          // padding-right: 20px;
+
+            thead {
+              display: none;
+            }
+
+            tbody {
+              display: block;
+            }
+        }
+
+        &__view {
+          display: flex;
+          align-items: center;
+          color: rgba($black, .5);
+
+            .wmd {
+              font-size: 18px;
+            }
+
+            &.active {
+              color: $purple;
+            }
+        }
+    }
+}
+
+.thead {
+
+    &--light {
+
+        th {
+          color: $table-head-color;
+          background-color: $table-head-bg;
+        }
+    }
+}
+
+
+.tr {
+    
+
+    @include media-breakpoint-down(xs) {
+
+        .table--card &--card {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 10px;
+          border-radius: $card-border-radius;
+
+            &:not(:last-child) {
+              margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+.td {
+
+		&--grow {
+			flex-basis: 0;
+      flex-grow: 1;
+      width: 100%;
+      max-width: 100%;
+		}
+
+		&--auto {
+			flex: 0 0 auto;
+      width: auto;
+      max-width: none;
+		}
+
+
+    @include media-breakpoint-down(xs) {
+
+        .table--card &--card {
+          display: block;
+          flex-basis: 0;
+          flex-grow: 1;
+          max-width: 100%;
+          padding: 10px;
+
+            &:before {
+              content: attr(data-card-title);
+              display: block;
+              font-weight: $font-weight-bold;
+              line-height: 1.5;
+              margin-top: -5px;
+              margin-bottom: 5px;
+            }
+
+            &.text-center:not(.td--card-text-center) {
+              text-align: left !important;
+            }
+
+            &.td--card-text-center {
+              text-align: center !important;
+            }
+
+            &--half {
+              flex: 0 0 50%;
+              max-width: 50%;
+            }
+
+            &--full {
+              flex: 0 0 100%;
+              max-width: 100%;
+            }
+
+            .btn--sm-round {
+              min-width: 126px;
+            }
+        }
+    }
+}

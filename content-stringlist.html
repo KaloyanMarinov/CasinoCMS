@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Strings & Widgets" })
+  <body>
+
+    @@include('nav.html')
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header.html', { "search-open": false })
+      @@include('search.html')
+
+      <div class="w-100 pt-sm-30 pt-20">
+        <div class="container">
+          <ul class="breadcrumb mb-15">
+            <a href="dashboard.html" class="breadcrumb__item">Home</a>
+            <a href="#" class="breadcrumb__item">Content</a>
+            <span class="breadcrumb__item active">Strings & Widgets</span>
+          </ul>
+
+          <div class="row align-items-center mb-15">
+            <div class="col">
+              <h1 class="h1-rem-sm h2">Strings & Widgets</h1>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-auto order-lg-3">
+              <a href="edit-content-stringlist.html" class="btn btn--round btn--orange btn--add w-100 font-weight-black"><i class="wmd wmd-24 mr-sm-20"></i><span class="d-sm-inline d-none">Add New</span></a>
+            </div>
+
+            <div class="col-xl-5 col-lg-6 col-12 order-lg-2 mt-lg-0 mt-15">
+              <div class="row">
+                <div class="col-lg-6 col-sm-auto col-12">
+                  <a href="#" target="_blank" class="btn btn--round btn--purple mb-sm-0 mb-15 w-100"><i class="wmd wmd-53 mr-10 align-middle"></i><span class="align-middle">Export Translations</span></a>
+                </div>
+                <div class="col-lg-6 col-sm-auto col-12">
+                  <a href="#" target="_blank" class="btn btn--round btn--outline-purple w-100"><i class="wmd wmd-51 mr-10 align-middle"></i><span class="align-middle">Import Translations</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-sm-center">
+            <div class="col-xl-2 col-md-3 col-sm-4 col-12 mb-15">
+              <div class="row align-items-center mx-0">
+                <div class="col-auto px-0 d-sm-block d-none"><label class="mr-10">Show:</label></div>
+                <div class="col px-0">
+                  <select class="form__control">
+                    <option value="">10 per page</option>
+                    <option value="">20 per page</option>
+                    <option value="">30 per page</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-12 mb-15 ml-sm-auto">
+              <input type="text" class="form__control" placeholder="Search">
+            </div>
+          </div>
+
+          <div class="row justify-content-between d-sm-none mb-20">
+            <div class="col-auto">
+              <button class="table__view text-uppercase font-weight-bold active" data-toggle="table-view" data-target="#games" data-view="table" aria-expanded="true">
+                table
+                <i class="wmd wmd-26 ml-10"></i>
+              </button>
+            </div>
+            <div class="col-auto">
+              <button class="table__view text-uppercase font-weight-bold" data-toggle="table-view" data-target="#games" data-view="card" aria-expanded="false">
+                Card
+                <i class="aria-false wmd wmd-27 ml-10"></i>
+                <i class="aria-true wmd wmd-28 ml-10"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive-shadow">
+            <div class="table-responsive">
+              <table class="table table--striped table--hover table--rounded" id="games">
+                <thead class="thead--light">
+                  <tr>
+                    <th><button class="table__sort table__sort--up">Label</button></th>
+                    <th><button class="table__sort">Type</button></th>
+                    <th>String</th>
+                    <th class="text-center">Translations</th>
+                    <th class="text-center">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  @@loop('content/stringlist/stringlist-row.html', [
+                    { "label" : "withdrawal_cancelled", "type": "String", "string": "Your withdrawal has been cancelled", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "title_welcome_bonus", "type": "Widget", "string": "Enjoy Your Welcome Bonus!", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "withdrawal_cancelled", "type": "String", "string": "Your withdrawal has been cancelled", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "title_welcome_bonus", "type": "Widget", "string": "Enjoy Your Welcome Bonus!", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "withdrawal_cancelled", "type": "String", "string": "Your withdrawal has been cancelled", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "title_welcome_bonus", "type": "Widget", "string": "Enjoy Your Welcome Bonus!", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "withdrawal_cancelled", "type": "String", "string": "Your withdrawal has been cancelled", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "title_welcome_bonus", "type": "Widget", "string": "Enjoy Your Welcome Bonus!", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "withdrawal_cancelled", "type": "String", "string": "Your withdrawal has been cancelled", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" },
+                    { "label" : "title_welcome_bonus", "type": "Widget", "string": "Enjoy Your Welcome Bonus!", "image1": "../dist/images/examples/de_31121609.png", "image2": "../dist/images/examples/fi_31121559.png", "image3": "../dist/images/examples/no_31121531.png", "image4": "../dist/images/examples/sw_31115955.png" }
+                  ])
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          @@include('pagination.html')
+        </div>
+      </div>
+
+       @@include('footer.html')
+    </main>
+    
+    @@include('foot.html')
+  </body>
+</html>

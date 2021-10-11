@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+	@@include('head.html', { "title": "Wishing well Reports" })
+	<body>
+
+		@@include('nav.html')
+
+		<main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+			@@include('header.html', { "search-open": false })
+			@@include('search.html')
+
+			<div class="w-100 pt-sm-30 pt-20">
+				<div class="container">
+					<ul class="breadcrumb mb-20">
+						<a href="dashboard.html" class="breadcrumb__item">Home</a>
+						<a href="#" class="breadcrumb__item">Reports</a>
+						<a href="#" class="breadcrumb__item">Wishing well</a>
+						<span class="breadcrumb__item active">Dashboard</span>
+					</ul>
+
+					<div class="row align-items-center mb-15">
+						<div class="col-sm col-12 mb-sm-0 mb-15">
+							<h1 class="h1-rem-sm h2">Wishing well Reports</h1>
+						</div>
+
+						<div class="col-xl-2 col-md-3 col-sm-4 col-12">
+							<a href="" class="btn btn--round btn--outline-gray btn--add w-100 font-weight-black">reports Wiki</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xl-2 col-md-3 col-sm-4 col-12 order-sm-2 mb-sm-0 mb-15">
+							<a href="reports-wishing-well-generate.html" class="btn btn--round btn--orange px-5 btn--add w-100 font-weight-black"><i class="wmd wmd-24 mr-sm-20 mr-10"></i>generate reports</a>
+						</div>
+						<div class="col-sm col-12 order-sm-1 mt-sm-15">
+							<nav class="report__players__nav nav d-flex flex-sm-wrap flex-sm-row flex-column mb-sm-0 mb-10 font-size-lg js-report-players-nav">
+								<button type="button" data-toggle="tab" data-target="#lifetime" class="d-sm-block px-sm-0 px-15 font-weight-bold active">Lifetime</button>
+								<button type="button" data-toggle="tab" data-target="#today" class="d-sm-block px-sm-0 px-15 font-weight-bold">Today</button>
+								<button type="button" data-toggle="tab" data-target="#yesterday" class="d-sm-block px-sm-0 px-15 font-weight-bold">Yesterday</button>
+								<button type="button" data-toggle="tab" data-target="#thisWeek" class="d-sm-block px-sm-0 px-15 font-weight-bold">This week</button>
+								<button type="button" data-toggle="tab" data-target="#thisMonth" class="d-sm-block px-sm-0 px-15 font-weight-bold">This month</button>
+								<button type="button" data-toggle="tab" data-target="#thisYear" class="d-sm-block px-sm-0 px-15 font-weight-bold">This year</button>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-f5f4f7">
+					<div class="container">
+						<div class="report__players__cards tab-content mb-25 pt-30">
+							<div class="tab-pane fade show active" id="lifetime" role="tabpanel">
+								<div class="row">
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-report-games mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">12,345</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Total games played</p>
+									  </div>
+									</div>
+
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-token mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">284</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Tokens available</p>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="today" role="tabpanel">
+								<div class="row">
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-report-games mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">12,345</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Total games played</p>
+									  </div>
+									</div>
+
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-token mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">284</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Tokens available</p>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="yesterday" role="tabpanel">
+								<div class="row">
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-report-games mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">12,345</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Total games played</p>
+									  </div>
+									</div>
+
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-token mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">284</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Tokens available</p>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="thisWeek" role="tabpanel">
+								<div class="row">
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-report-games mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">12,345</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Total games played</p>
+									  </div>
+									</div>
+
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-token mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">284</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Tokens available</p>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="thisMonth" role="tabpanel">
+								<div class="row">
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-report-games mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">12,345</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Total games played</p>
+									  </div>
+									</div>
+
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-token mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">284</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Tokens available</p>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="thisYear" role="tabpanel">
+								<div class="row">
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-report-games mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">12,345</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Total games played</p>
+									  </div>
+									</div>
+
+									<div class="col-sm-6 col-12">
+									  <div class="card card--rounded card--bg-token mb-sm-30 mb-20 p-sm-30 p-20 bg-white">
+									    <h3 class="h1-rem-sm h1 mb-10">284</h3>
+									    <p class="font-size-xl-rem-sm font-size-xl font-weight-medium text-purple-80">Tokens available</p>
+									  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<h3 class="mb-20 text-gray-700">Last games played</h3>
+
+						@@include('reports/wishing-well/players-table.html')
+
+						<div class="report__players__divider pb-sm-10 mb-20">
+							<button class="btn--show-more w-100 py-15"><i class="wmd wmd-25 mr-10"></i>Show More</button>
+						</div>
+
+						<h3 class="mb-20 text-gray-700">Last prizes won</h3>
+
+						@@include('reports/wishing-well/prizes-won-table.html')
+
+						<button class="btn--show-more w-100 py-15"><i class="wmd wmd-25 mr-10"></i>Show More</button>
+					</div>
+				</div>
+			</div>
+
+			@@include('footer.html')
+		</main>
+		@@include('confirm-modal.html')
+
+		@@include('reports/player-details.html')
+		@@include('foot.html')
+	</body>
+</html>

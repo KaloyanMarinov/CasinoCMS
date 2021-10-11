@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Blog Posts" })
+  <body>
+
+    @@include('nav.html')
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header.html', { "search-open": false })
+      @@include('search.html')
+
+      <div class="w-100 pt-sm-30 pt-20">
+        <div class="container">
+          <ul class="breadcrumb mb-15">
+            <a href="dashboard.html" class="breadcrumb__item">Home</a>
+            <a href="#" class="breadcrumb__item">Blog</a>
+            <span class="breadcrumb__item active">Posts</span>
+          </ul>
+
+          <div class="row align-items-center mb-15">
+            <div class="col">
+              <h1 class="h1-rem-sm h2">Posts</h1>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-auto">
+              <a href="edit-blog-posts.html" class="btn btn--round btn--orange btn--add w-100 font-weight-black"><i class="wmd wmd-24 mr-sm-20"></i><span class="d-sm-inline d-none">Add new</span></a>
+            </div>
+          </div>
+
+          <div class="row align-items-sm-center justify-content-sm-between">
+            <div class="col-xl-2 col-md-3 col-sm-4 col-12 mb-15">
+              <div class="row align-items-center mx-0">
+                <div class="col-auto px-0 d-sm-block d-none"><label class="mr-10">Show:</label></div>
+                <div class="col px-0">
+                  <select class="form__control">
+                    <option value="">10 per page</option>
+                    <option value="">20 per page</option>
+                    <option value="">30 per page</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-auto col-12 mb-15">
+              @@include('dropdown-filter.html', { "title": "Filter by Categories" })
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-12 mb-15 ml-sm-auto">
+              <input type="text" class="form__control" placeholder="Search">
+            </div>
+          </div>
+
+          <div class="row justify-content-between d-sm-none mb-20">
+            <div class="col-auto">
+              <button class="table__view text-uppercase font-weight-bold active" data-toggle="table-view" data-target="#games" data-view="table" aria-expanded="true">
+                table
+                <i class="wmd wmd-26 ml-10"></i>
+              </button>
+            </div>
+            <div class="col-auto">
+              <button class="table__view text-uppercase font-weight-bold" data-toggle="table-view" data-target="#games" data-view="card" aria-expanded="false">
+                Card
+                <i class="aria-false wmd wmd-27 ml-10"></i>
+                <i class="aria-true wmd wmd-28 ml-10"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive-shadow">
+            <div class="table-responsive">
+              <table class="table table--striped table--hover table--rounded" id="games">
+                <thead class="thead--light">
+                  <tr>
+                    <th><button class="table__sort table__sort--up">Title</button></th>
+                    <th>Categories</th>
+                    <th>Date</th>
+                    <th class="text-center">Enabled</th>
+                    <th class="text-center">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  @@loop('blog/posts/posts-row.html', [
+                    { "title" : "A Brand-New Casino Experience has Launched with Wishmaker!", "category": "  Wishmaker World", "date" : "2018-10-30 12:18:37", "enabled": "Yes" },
+                    { "title" : "Exciting Rewards are Waiting to be Enjoyed at Wishmaker Casino!", "category": "  Wishmaker World", "date" : "2018-11-02 12:50:16", "enabled": "Yes" },
+                    { "title" : "Play Mega Fortune at Wishmaker Casino and Get the Chance to Win Huge Jackpots!", "category": "  New Games", "date" : "2018-10-25 10:15:46", "enabled": "Yes" },
+                    { "title" : "Play the Hottest New Online Slots at Wishmaker Casino Today!", "category": "  New Games", "date" : "2018-11-02 12:49:54", "enabled": "Yes" }
+                  ])
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          @@include('pagination.html')
+        </div>
+      </div>
+
+       @@include('footer.html')
+    </main>
+    
+    @@include('foot.html')
+  </body>
+</html>

@@ -1,0 +1,17 @@
+@include media-breakpoint-only(md) {
+	html {
+		font-size: 12.8px;
+	}
+}
+
+@include media-breakpoint-only(sm) {
+	html {
+		font-size: 10.24px;
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	html {
+	font-size: 10px;
+	}
+}

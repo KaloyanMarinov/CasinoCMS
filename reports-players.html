@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+	@@include('head.html', { "title": "Players Reports" })
+	<body>
+
+		@@include('nav.html')
+
+		<main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+			@@include('header.html', { "search-open": false })
+			@@include('search.html')
+
+			<div class="w-100 pt-sm-30 pt-20">
+				<div class="container">
+					<ul class="breadcrumb mb-20">
+						<a href="dashboard.html" class="breadcrumb__item">Home</a>
+						<a href="#" class="breadcrumb__item">Reports</a>
+						<a href="#" class="breadcrumb__item">Players</a>
+						<span class="breadcrumb__item active">Dashboard</span>
+					</ul>
+
+					<div class="row align-items-center mb-15">
+						<div class="col-sm col-12 mb-sm-0 mb-15">
+							<h1 class="h1-rem-sm h2">Players Reports</h1>
+						</div>
+
+						<div class="col-xl-2 col-md-3 col-sm-4 col-12">
+							<a href="" class="btn btn--round btn--outline-gray btn--add w-100 font-weight-black">reports Wiki</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xl-2 col-md-3 col-sm-4 col-12 order-sm-2 mb-sm-0 mb-15">
+							<a href="reports-players-generate.html" class="btn btn--round btn--orange px-5 btn--add w-100 font-weight-black"><i class="wmd wmd-24 mr-sm-20 mr-10"></i>generate reports</a>
+						</div>
+						<div class="col-sm col-12 order-sm-1 mt-sm-15">
+							<nav class="report__players__nav nav d-flex flex-sm-wrap flex-sm-row flex-column mb-sm-0 mb-10 font-size-lg js-report-players-nav">
+								<button type="button" data-toggle="tab" data-target="#lifetime" class="d-sm-block px-sm-0 px-15 font-weight-bold active">Lifetime</button>
+								<button type="button" data-toggle="tab" data-target="#today" class="d-sm-block px-sm-0 px-15 font-weight-bold">Today</button>
+								<button type="button" data-toggle="tab" data-target="#yesterday" class="d-sm-block px-sm-0 px-15 font-weight-bold">Yesterday</button>
+								<button type="button" data-toggle="tab" data-target="#thisWeek" class="d-sm-block px-sm-0 px-15 font-weight-bold">This week</button>
+								<button type="button" data-toggle="tab" data-target="#thisMonth" class="d-sm-block px-sm-0 px-15 font-weight-bold">This month</button>
+								<button type="button" data-toggle="tab" data-target="#thisYear" class="d-sm-block px-sm-0 px-15 font-weight-bold">This year</button>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-f5f4f7">
+					<div class="container">
+						<div class="report__players__cards tab-content mb-25 pt-30">
+							<div class="tab-pane fade show active" id="lifetime" role="tabpanel">
+								<div class="row">
+									@@loop('dashboard/box.html', [
+										{ "number": "12,345", "text": "Total Players", "bg": "players" },
+										{ "number": "24,584", "text": "Depositors", "bg": "card" },
+										{ "number": "24,584", "text": "EUR Deposited", "bg": "euro" },
+										{ "number": "12,345", "text": "Wish Coins Awarded", "bg": "trophy" },
+										{ "number": "24,584", "text": "Wishcoins Spent", "bg": "coin" },
+										{ "number": "24,584", "text": "avg Deposit", "bg": "money" }
+									])
+								</div>
+							</div>
+							<div class="tab-pane fade" id="today" role="tabpanel">
+								<div class="row">
+									@@loop('dashboard/box.html', [
+										{ "number": "12,345", "text": "Total Players", "bg": "players" },
+										{ "number": "24,584", "text": "Depositors", "bg": "card" },
+										{ "number": "12,345", "text": "Wish Coins Awarded", "bg": "trophy" },
+										{ "number": "24,584", "text": "EUR Deposited", "bg": "euro" },
+										{ "number": "24,584", "text": "Wishcoins Spent", "bg": "coin" },
+										{ "number": "24,584", "text": "avg Deposit", "bg": "money" }
+									])
+								</div>
+							</div>
+							<div class="tab-pane fade" id="yesterday" role="tabpanel">
+								<div class="row">
+									@@loop('dashboard/box.html', [
+										{ "number": "12,345", "text": "Total Players", "bg": "players" },
+										{ "number": "24,584", "text": "Depositors", "bg": "card" },
+										{ "number": "12,345", "text": "Wish Coins Awarded", "bg": "trophy" },
+										{ "number": "24,584", "text": "EUR Deposited", "bg": "euro" },
+										{ "number": "24,584", "text": "Wishcoins Spent", "bg": "coin" },
+										{ "number": "24,584", "text": "avg Deposit", "bg": "money" }
+									])
+								</div>
+							</div>
+							<div class="tab-pane fade" id="thisWeek" role="tabpanel">
+								<div class="row">
+									@@loop('dashboard/box.html', [
+										{ "number": "12,345", "text": "Total Players", "bg": "players" },
+										{ "number": "24,584", "text": "Depositors", "bg": "card" },
+										{ "number": "12,345", "text": "Wish Coins Awarded", "bg": "trophy" },
+										{ "number": "24,584", "text": "EUR Deposited", "bg": "euro" },
+										{ "number": "24,584", "text": "Wishcoins Spent", "bg": "coin" },
+										{ "number": "24,584", "text": "avg Deposit", "bg": "money" }
+									])
+								</div>
+							</div>
+							<div class="tab-pane fade" id="thisMonth" role="tabpanel">
+								<div class="row">
+									@@loop('dashboard/box.html', [
+										{ "number": "12,345", "text": "Total Players", "bg": "players" },
+										{ "number": "24,584", "text": "Depositors", "bg": "card" },
+										{ "number": "12,345", "text": "Wish Coins Awarded", "bg": "trophy" },
+										{ "number": "24,584", "text": "EUR Deposited", "bg": "euro" },
+										{ "number": "24,584", "text": "Wishcoins Spent", "bg": "coin" },
+										{ "number": "24,584", "text": "avg Deposit", "bg": "money" }
+									])
+								</div>
+							</div>
+							<div class="tab-pane fade" id="thisYear" role="tabpanel">
+								<div class="row">
+									@@loop('dashboard/box.html', [
+										{ "number": "12,345", "text": "Total Players", "bg": "players" },
+										{ "number": "24,584", "text": "Depositors", "bg": "card" },
+										{ "number": "12,345", "text": "Wish Coins Awarded", "bg": "trophy" },
+										{ "number": "24,584", "text": "EUR Deposited", "bg": "euro" },
+										{ "number": "24,584", "text": "Wishcoins Spent", "bg": "coin" },
+										{ "number": "24,584", "text": "avg Deposit", "bg": "money" }
+									])
+								</div>
+							</div>
+						</div>
+
+						<div class="row align-items-center">
+							<div class="col-sm col-12 mb-15">
+								<h3 class="text-gray-700">Top Players</h3>
+							</div>
+							<div class="col-lg-3 col-sm-4 col-12 mb-15">
+								<div class="row align-items-center mx-0">
+	                <div class="col-auto px-0 d-sm-block d-none"><label class="mr-10">Show by:</label></div>
+	                <div class="col px-0">
+	                  <select class="form__control">
+	                    <option value="">Deposit</option>
+	                    <option value="">Logins</option>
+	                    <option value="">Time spent</option>
+	                    <option value="">Withdraws</option>
+	                  </select>
+	                </div>
+	              </div>
+							</div>
+						</div>
+
+						@@include('reports/players/table.html')
+
+						<button class="btn--show-more w-100 py-15"><i class="wmd wmd-25 mr-10"></i>Show More</button>
+					</div>
+				</div>
+			</div>
+
+			@@include('footer.html')
+		</main>
+		@@include('confirm-modal.html')
+
+		@@include('reports/player-details.html')
+		@@include('foot.html')
+	</body>
+</html>

@@ -1,0 +1,20 @@
+.ui-sortable {
+
+		&-handle {
+			-ms-touch-action: none;
+			touch-action: none;
+		}
+
+		&-helper {
+			display: table;
+			width: 100%;
+
+				&:hover {
+					cursor: move;
+				}
+		}
+
+		&-move {
+			cursor: move;
+		}
+}

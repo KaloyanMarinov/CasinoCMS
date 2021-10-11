@@ -1,0 +1,121 @@
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	// position: relative;
+
+		&:not(.modal-open) {
+			overflow: hidden;
+			overflow-y: auto;
+		}
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+		a {
+			display: block;
+		}
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	padding: 0;
+	border: 0;
+	background: none;
+
+		&:focus {
+			outline: none;
+		}
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+optgroup,
+textarea {
+	appearance: none;
+}
+
+label {
+	margin-bottom: 0;
+}
+
+figure,
+blockquote {
+	margin: 0;
+}
+
+img {
+	display: inline-block;
+	@include img-fluid();
+}
+
+address, ol, ul, dl, pre, {
+	margin-bottom: 0;
+}
+
+ul,
+ol {
+	@include list-unstyled();
+}
+
+b,
+strong {
+	font-weight: $font-weight-bold;
+}
+
+em, i {
+	font-style: italic;
+}
+
+a,
+button,
+input[type="submit"],
+input[type="reset"] {
+	cursor: pointer;
+	transition: $default-transition;
+
+		&:focus {
+			outline: none;
+		}
+}
+
+a {
+	color: $link-color;
+	text-decoration: $link-decoration;
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+
+		@include hover {
+			color: $link-hover-color;
+		}
+}
+
+button {
+	color: inherit;
+}
+
+p {
+
+		a {
+
+				&:hover {
+					text-decoration: underline;
+				}
+		}
+}
+
+.mw-none {
+	max-width: none !important;
+}
+
+@include media-breakpoint-down(xs) {
+
+	body {
+		// position: relative;
+	}
+}

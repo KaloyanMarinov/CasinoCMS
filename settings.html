@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Settings" })
+  <body>
+
+    @@include('nav.html')
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header.html', { "search-open": false })
+      @@include('search.html')
+
+      <div class="w-100 pt-sm-30 pt-20">
+        <div class="container">
+          <ul class="breadcrumb mb-20">
+            <a href="dashboard.html" class="breadcrumb__item">Home</a>
+            <span class="breadcrumb__item active">Settings</span>
+          </ul>
+
+          <div class="row align-items-center mb-15">
+            <div class="col-sm col-12 mb-sm-0 mb-15">
+              <h1 class="h1-rem-sm h2">Settings</h1>
+            </div>
+
+            <div class="col-xl-2 col-sm-3">
+              <a href="" class="btn btn--round btn--outline-gray btn--add w-100 font-weight-black">View Settings Wiki</a>
+            </div>
+          </div>
+
+          <div class="languages">
+            <button class="language__item language__item--mobile d-md-none py-15 w-100 mr-0 text-left" type="button" data-toggle="collapse" data-target="#language" aria-expanded="false">General <i class="wmd wmd-25 float-right"></i></button>
+
+            <div class="collapse language d-md-flex flex-md-wrap nav" id="language" role="tablist">
+              <a href="#tab-1" data-toggle="tab" role="tab" aria-selected="true" class="language__item py-15 active">General</a>
+              <a href="#tab-2" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">Points (Default)</a>
+              <a href="#tab-3" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">Coins (Default)</a>
+              <a href="#tab-4" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">SMTP</a>
+              <a href="#tab-5" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">Live Feed</a>
+              <a href="#tab-6" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">RabbitMQ</a>
+              <a href="#tab-7" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">Player Journey</a>
+              <a href="#tab-8" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">Default Images</a>
+              <a href="#tab-9" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">Blacklist</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white py-30">
+          <div class="container">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="tab-1" role="tabpanel">@@include('settings/edit-general-form.html')</div>
+              <div class="tab-pane fade" id="tab-2" role="tabpanel">@@include('settings/edit-points-form.html')</div>
+              <div class="tab-pane fade" id="tab-3" role="tabpanel">@@include('settings/edit-coins-form.html')</div>
+              <div class="tab-pane fade" id="tab-4" role="tabpanel">@@include('settings/edit-smtp-form.html')</div>
+              <div class="tab-pane fade" id="tab-5" role="tabpanel">@@include('settings/edit-feed-form.html')</div>
+              <div class="tab-pane fade" id="tab-6" role="tabpanel">@@include('settings/edit-rabbit-form.html')</div>
+              <div class="tab-pane fade" id="tab-7" role="tabpanel">@@include('settings/edit-journey-form.html')</div>
+              <div class="tab-pane fade" id="tab-8" role="tabpanel">
+                <div class="row align-items-center mb-15">
+                  <div class="col">
+                    <h2 class="h2">Images List</h2>
+                  </div>
+
+                  <div class="col-lg-2 col-sm-3 col-auto">
+                    <a href="edit-settings-images.html" class="btn btn--round btn--orange btn--add w-100 font-weight-black"><i class="wmd wmd-24 mr-sm-20"></i><span class="d-sm-inline d-none">Add new</span></a>
+                  </div>
+                </div>
+
+                <div class="row align-items-sm-center justify-content-sm-between">
+                  <div class="col-xl-2 col-md-3 col-sm-4 col-12 mb-15">
+                    <div class="row align-items-center mx-0">
+                      <div class="col-auto px-0 d-sm-block d-none"><label class="mr-10">Show:</label></div>
+                      <div class="col px-0">
+                        <select class="form__control">
+                          <option value="">10 per page</option>
+                          <option value="">20 per page</option>
+                          <option value="">30 per page</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-sm-3 col-12 mb-15">
+                    <input type="text" class="form__control" placeholder="Search">
+                  </div>
+                </div>
+
+                <div class="row justify-content-between d-sm-none mb-20">
+                  <div class="col-auto">
+                    <button class="table__view text-uppercase font-weight-bold active" data-toggle="table-view" data-target="#games" data-view="table" aria-expanded="true">
+                      table
+                      <i class="wmd wmd-26 ml-10"></i>
+                    </button>
+                  </div>
+                  <div class="col-auto">
+                    <button class="table__view text-uppercase font-weight-bold" data-toggle="table-view" data-target="#games" data-view="card" aria-expanded="false">
+                      Card
+                      <i class="aria-false wmd wmd-27 ml-10"></i>
+                      <i class="aria-true wmd wmd-28 ml-10"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="table-responsive-shadow">
+                  <div class="table-responsive">
+                    <table class="table table--striped table--hover table--rounded" id="games">
+                      <thead class="thead--light">
+                        <tr>
+                          <th><button class="table__sort table__sort--up">Label</button></th>
+                          <th><button class="table__sort">Image</button></th>
+                          <th class="text-center">Actions</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        @@loop('settings/images-row.html', [
+                          { "label" : "blog_categories_image", "image": "../dist/images/examples/BlogDefault1176x7842x_04030916.jpg" },
+                          { "label" : "game_background", "image": "../dist/images/examples/GameBackgroundDefault3840x21602x_04030303.jpg" },
+                          { "label" : "game_categories_background", "image": "../dist/images/examples/GameBackgroundDefault3200x8002x_04031017.jpg" },
+                          { "label" : "game_categories_menuicon", "image": "../dist/images/examples/GameMenuDefaultIcon_10095719.svg" },
+                          { "label" : "blog_categories_image", "image": "../dist/images/examples/BlogDefault1176x7842x_04030916.jpg" },
+                          { "label" : "game_background", "image": "../dist/images/examples/GameBackgroundDefault3840x21602x_04030303.jpg" },
+                          { "label" : "game_categories_background", "image": "../dist/images/examples/GameBackgroundDefault3200x8002x_04031017.jpg" },
+                          { "label" : "game_categories_menuicon", "image": "../dist/images/examples/GameMenuDefaultIcon_10095719.svg" },
+                          { "label" : "blog_categories_image", "image": "../dist/images/examples/BlogDefault1176x7842x_04030916.jpg" },
+                          { "label" : "game_background", "image": "../dist/images/examples/GameBackgroundDefault3840x21602x_04030303.jpg" }
+                        ])
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                @@include('pagination.html')
+              </div>
+              <div class="tab-pane fade" id="tab-9" role="tabpanel">@@include('settings/edit-blacklist-form.html')</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       @@include('footer.html')
+    </main>
+    @@include('confirm-modal.html')
+    @@include('foot.html')
+  </body>
+</html>

@@ -1,0 +1,5 @@
+@mixin fontFamily ($font-name) {
+  font-family: $font-name, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}

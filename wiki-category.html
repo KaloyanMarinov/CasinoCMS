@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	@@include('head.html', { "title": "Casino Wiki" })
+	<body>
+
+		@@include('nav.html')
+
+		<main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+			@@include('header-wiki.html', { "search-open": false })
+			@@include('search.html')
+			<div class="w-100 pt-20">
+				<div class="container">
+					<ul class="breadcrumb mb-15">
+						<a href="wiki.html" class="breadcrumb__item">Wishmaker WIki</a>
+						<span class="breadcrumb__item active">Casino Wiki</span>
+					</ul>
+
+					<div class="row align-items-center">
+						<div class="col-sm-4 col-12 mb-sm-25 mb-20">
+							<h1 class="h1-rem-sm h2 text-gray-700">Wishmaker Wiki</h1>
+						</div>
+
+						<div class="col-sm col-12 mb-sm-25 mb-20">
+							<div class="form__group">
+								<input type="text" class="form__control form__control--lg form--has-icon-lg" placeholder="Type something">
+								<span class="form__icon form__icon--lg text-center"><i class="wmd wmd-1"></i></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="wiki__box mb-20 rounded overflow-hidden">
+						<div class="wiki__box__head row align-items-center py-10 bg-white">
+							<div class="col-auto pr-0">
+								<figure class="wiki__box__icon text-center"><i class="wmd wmd-5"></i></figure>
+							</div>
+							<div class="col pl-0">
+								<h3 class="text-gray-700"><strong>Casino Wiki</strong></h3>
+							</div>
+							<div class="col-auto">
+								<a href="" class="wiki__box__edit px-20"><i class="wmd wmd-77 mr-5"></i> Edit</a>
+							</div>
+						</div>
+
+						<div class="wiki__box__body px-25 py-10">
+							<ol class="wiki__box__list-cat font-weight-bold">
+								<li>General
+									<ol class="font-weight-normal">
+										<li><a href="wiki-page.html">Casino general wiki</a></li>
+										<li><a href="wiki-page.html">Where it apperas on front-end</a></li>
+									</ol>
+								</li>
+								<li>Games
+									<ol class="font-weight-normal">
+										<li><a href="wiki-page.html">Casino general wiki</a></li>
+										<li><a href="wiki-page.html">Where it apperas on front-end</a></li>
+										<li><a href="wiki-page.html">Casino general wiki</a></li>
+										<li><a href="wiki-page.html">Where it apperas on front-end</a></li>
+									</ol>
+								</li>
+								<li><a href="wiki-page.html">Providers</a></li>
+								<li><a href="wiki-page.html">Categories</a></li>
+								<li><a href="wiki-page.html">Themes</a></li>
+								<li><a href="wiki-page.html">Features</a></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			@@include('footer.html')
+		</main>
+		
+		@@include('foot.html')
+	</body>
+</html>

@@ -1,0 +1,14 @@
+
+@function rem($pixels, $context: 16) {
+	$pixels: strip-units($pixels);
+	
+  @return ($pixels / $context) * 1rem;
+}
+
+@function fade($color, $opacity) {
+  @return rgba($color, ($opacity / 100));
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}

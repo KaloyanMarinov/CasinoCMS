@@ -1,0 +1,130 @@
+
+
+.card {
+
+		&--rounded {
+			@include border-radius($card-border-radius);
+		}
+
+		&--bg-players {
+			background-image: url('#{$images-svg}playes.svg');
+			background-position: calc(100% + 15px) bottom;
+			background-repeat: no-repeat;
+		}
+
+		&--bg-games {
+			background-image: url('#{$images-svg}games.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-races {
+			background-image: url('#{$images-svg}races.svg');
+			background-position: calc(100% + 15px) calc(100% + 25px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-card {
+			background-image: url('#{$images-svg}card.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-euro {
+			background-image: url('#{$images-svg}euro.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-trophy {
+			background-image: url('#{$images-svg}trophy.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-coin {
+			background-image: url('#{$images-svg}coin.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-money {
+			background-image: url('#{$images-svg}money.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-diamond {
+			background-image: url('#{$images-svg}diamond.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-diamond-active {
+			background-image: url('#{$images-svg}diamond-active.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-diamond-not-active {
+			background-image: url('#{$images-svg}diamond-not-active.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-report-trophy {
+			background-image: url('#{$images-svg}report-trophy.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-report-trophy-active {
+			background-image: url('#{$images-svg}report-trophy-active.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-report-trophy-not-active {
+			background-image: url('#{$images-svg}report-trophy-not-active.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-wishcoins {
+			background-image: url('#{$images-svg}wishcoins.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-list {
+			background-image: url('#{$images-svg}list.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-report-games {
+			background-image: url('#{$images-svg}report-games.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&--bg-token {
+			background-image: url('#{$images-svg}token.svg');
+			background-position: calc(100% + 15px) calc(100% + 15px);
+			background-repeat: no-repeat;
+		}
+
+		&__header {
+			@include border-top-radius($card-border-radius);
+			background-color: $card-header-bgcolor;
+		}
+
+		&__title {
+
+				&__small {
+					color: #74698e;
+					font-size: $font-size-base;
+					font-weight: $font-weight-normal;
+				}
+		}
+}

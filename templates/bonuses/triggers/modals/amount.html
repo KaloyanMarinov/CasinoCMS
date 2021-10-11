@@ -1,0 +1,100 @@
+<div class="modal fade" id="amount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content text-center">
+      <div class="py-20 bg-gray-200 rounded-top">
+        <h4 class="h2 font-weight-bold">Amount (Value)</h4>
+      </div>
+      <div class="p-20">
+        <div class="mb-30 nav">
+          <label class="form__custom-radio mr-sm-40 mr-10 js-radio-tab" data-toggle="tab" data-target="#amountSingle">
+            <input type="radio" name="amountType" class="form__custom-radio__input" checked>
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">Exact</span>
+          </label>
+
+          <label class="form__custom-radio mr-sm-40 mr-10 js-radio-tab" data-toggle="tab" data-target="#amountBetween">
+            <input type="radio" name="amountType" class="form__custom-radio__input">
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">Between</span>
+          </label>
+
+          <label class="form__custom-radio mr-sm-40 mr-10 js-radio-tab" data-toggle="tab" data-target="#amountSingle">
+            <input type="radio" name="amountType" class="form__custom-radio__input">
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">Less</span>
+          </label>
+
+          <label class="form__custom-radio js-radio-tab" data-toggle="tab" data-target="#amountSingle">
+            <input type="radio" name="amountType" class="form__custom-radio__input">
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">More</span>
+          </label>
+        </div>
+
+        <div class="tab-content mb-20">
+          <div class="tab-pane fade show active" id="amountSingle">
+            <div class="form__group d-inline-block">
+              <div class="form__row align-items-center">
+                <div class="col-sm-auto col-3">
+                  <label class="mr-10">Number</label>
+                </div>
+
+                <div class="col">
+                  <input type="number" class="form__control" value="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="amountBetween">
+            <div class="row justify-content-center">
+              <div class="col-sm-5 col-12 mb-sm-0 mb-15">
+                <div class="form__group">
+                  <div class="form__row align-items-center">
+                    <div class="col-sm-auto col-3">
+                      <label class="mr-10">Min</label>
+                    </div>
+
+                    <div class="col">
+                      <input type="number" class="form__control" value="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+               <div class="col-sm-5 col-12">
+                <div class="form__group">
+                  <div class="form__row align-items-center">
+                    <div class="col-sm-auto col-3">
+                      <label class="mr-10">Max</label>
+                    </div>
+
+                    <div class="col">
+                      <input type="number" class="form__control" value="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-7 col-md-8 col-12">
+            <div class="row">
+              <div class="col-sm-6 col-12 mt-20">
+                <button type="button" class="btn btn--orange btn--lg-round w-100"><i class="wmd wmd-21 mr-10"></i>save</button>
+              </div>
+
+              <div class="col-sm-6 col-12 mt-20">
+                <button class="btn btn--outline-gray btn--lg-round w-100" data-dismiss="modal"><i class="wmd wmd-23 mr-15"></i> cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

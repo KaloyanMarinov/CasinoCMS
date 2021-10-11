@@ -1,0 +1,127 @@
+.select2-container {
+
+    &--elegance {
+
+        span:focus {
+          outline: none;
+        }
+
+        .select2-selection {
+
+            &--single {
+              @extend .form__control;
+              @extend .form__control--select;
+                
+                .select2-selection__rendered {
+                  line-height: $input-height;
+                }
+            }
+
+            &--multiple {
+
+                .select2-search__field {
+                  height: $input-height;
+                }
+
+                .select2-selection__rendered {
+                  @extend .w-100;
+                  @extend .form__control;
+                  @extend .form__control--select;
+                  height: auto !important;
+                  min-height: $input-height;
+                }
+
+                .select2-selection__choice {
+                  float: left;
+                  @extend .d-flex;
+                  @extend .align-items-center;
+                  @extend .float-left;
+                  margin-top: ( $input-height - 26px ) / 2;
+                  margin-bottom: ( $input-height - 26px ) / 2;
+                  font-size: 12px;
+                  color: $purple;
+                  border: 2px solid $purple;
+                  @extend .font-weight-medium;
+                  border-radius: 4px;
+                  padding: 3px 5px 3px 15px;
+
+                    &:not(:last-child) {
+                      @extend .mr-10;
+                    }
+                }
+
+                .select2-selection__choice__remove {
+                  @extend .position-relative;
+                  @extend .order-2;
+                  @include size(16px);
+                  @extend .rounded-circle;
+                  @extend .ml-10;
+                  cursor: pointer;
+                  background-color: #edebf0;
+                  font-size: 0;
+
+                    &:before,
+                    &:after {
+                      content: '';
+                      @include element-center();
+                      @include size(6px, 1px);
+                      background-color: #737373;
+                    }
+
+                    &:before {
+                      transform: rotate(45deg);
+                    }
+
+                    &:after {
+                      transform: rotate(-45deg);
+                    }
+
+                    &:hover {
+                      background-color: $red;
+
+                        &:before,
+                        &:after {
+                          background-color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.select2-search--dropdown {
+    
+    .select2-search__field {
+      @extend .form__control;
+      @extend .form__control--sm;
+      @extend .mb-10;
+    }
+}
+
+.select2-dropdown {
+  @extend .d-block;
+  @extend .position-absolute;
+  @extend .p-10;
+  width: 100%;
+  @extend .bg-white;
+  border: $input-border-width solid $input-border-color;
+  border-radius: $input-border-radius;
+  left: -100000px;
+  z-index: 2;
+}
+
+.select2-results__options {
+  max-height: 190px;
+  @extend .position-relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.select2-results__option[aria-selected="true"] {
+  @extend .d-none;
+}
+.select2-results__option:hover {
+  color: $orange;
+}
+

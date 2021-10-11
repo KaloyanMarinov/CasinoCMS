@@ -1,0 +1,25 @@
+@mixin element-center ( $type: tag, $top: true, $right: true, $bottom: true, $left: true ) {
+
+    position: absolute;
+    @if $top { top: 0; }
+    @if $bottom { bottom: 0; }
+    @if $type == tag {
+      @if $left { left: 0; }
+      @if $right { right: 0; }
+    } @else if $type == image {
+      left: -9999px;
+      right: -9999px;
+    }
+    margin: auto;
+}
+
+
+@mixin fixed-center ( $top: true, $right: true, $bottom: true, $left: true ) {
+
+    position: fixed;
+    @if $top { top: 0; }
+    @if $bottom { bottom: 0; }
+    @if $left { left: 0; }
+    @if $right { right: 0; }
+    margin: auto;
+}

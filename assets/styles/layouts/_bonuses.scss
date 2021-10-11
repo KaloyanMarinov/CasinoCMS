@@ -1,0 +1,64 @@
+.bonus {
+  color: #605667;
+  background-color: $body-bg;
+
+    img {
+      width: auto;
+      max-height: 100%;
+    }
+
+    &__title {
+      color: #605667;
+      height: 30px;
+    }
+
+    &__icon {
+      position: relative;
+      @include size(80px);
+    }
+
+    &__lock {
+      @include size(35px);
+      background-color: $white;
+      z-index: 2;
+      box-shadow: 0 0 5px rgba($black, .3);
+
+        @include media-breakpoint-up(sm) {
+          top: -5px;
+          right: -5px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          top: 0;
+          left: -5px;
+        }
+    }
+
+    &__mark {
+      width: 120px;
+      max-width: 100%;
+      padding: 3px 8px;
+      border-radius: 11px;
+      color: #726b7a;
+      background-color: #d3d3dc;
+      @include text-truncate;
+      font-size: $font-size-sm;
+    }
+
+    &__placeholder {
+      border: 2px dashed $body-bg;
+      min-height: 220px;
+      // flex: 0 0 200px;
+      // max-width: 200px;
+    }
+
+
+    &__num {
+      top: 15px;
+      left: 15px;
+      z-index: 3;
+      font-size: 14px;
+      @include size(20px);
+      line-height: 20px;
+    }
+}

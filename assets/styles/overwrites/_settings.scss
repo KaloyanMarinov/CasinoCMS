@@ -1,0 +1,141 @@
+// Remove Colors
+$colors: map-remove(
+  $colors,
+  "blue",
+  "indigo",
+  "pink",
+  "orange",
+  "yellow",
+  "green",
+  "teal",
+  "cyan",
+  "white",
+  "gray",
+  "gray-dark"
+);
+
+// Add Colors
+$colors: map-merge((
+  "black": $black,
+  "body": $body-bg,
+  "f5f4f7": #f5f4f7,
+  "353d4a": #353d4a,
+  "gray-200": $gray-200,
+  "gray-500": $gray-500,
+  "gray-700": $gray-700,
+  "purple-80": rgba($purple, .8)
+), $colors);
+
+// Remove Theme Colors
+$theme-colors: map-remove(
+	$theme-colors, 
+  "primary",
+  "secondary",
+  "success",
+  "info",
+  "warning",
+  "danger",
+  "light",
+  "dark"
+);
+
+// Add Theme Colors
+$theme-colors: map-merge((
+), $theme-colors);
+
+// Add Buttons
+$btn-colors: (
+  'gray': (
+    color: #6d6d6d,
+    background: $gray-200,
+    hover-color: $white,
+    hover-background: $gray-400
+  ),
+  'gray-dark': (
+    color: $white,
+    background: $gray-400,
+    hover-color: rgba($black, .7),
+    hover-background: $gray-200
+  ),
+  'orange': (
+    color: $white,
+    background: $orange,
+    border: transparent,
+    hover-color: $white,
+    hover-background: $purple,
+    hover-border: transparent
+  ),
+  'purple': (
+    color: $white,
+    background: $purple,
+    border: transparent,
+    hover-color: $white,
+    hover-background: #1f0d38,
+    hover-border: transparent
+  ),
+  'red': (
+    color: $white,
+    background: $red,
+    border: transparent,
+    hover-color: $white,
+    hover-background: darken($red, 20%),
+    hover-border: transparent
+  ),
+  'info': (
+    color: $white,
+    background: #5dbbb3,
+    border: transparent,
+    hover-color: $white,
+    hover-background: darken(#5dbbb3, 10%),
+    hover-border: transparent
+  )
+);
+
+$btn-outline-colors: (
+  'gray': (
+    color: rgba($black, .7),
+    border: rgba($black, .1),
+    hover-color: $white,
+    hover-background: $gray-400,
+    hover-border: $gray-400
+  ),
+  'purple': (
+    color: $purple,
+    border: $purple,
+    hover-color: $white,
+    hover-background: $purple,
+    hover-border: $purple
+  ),
+);
+
+// Remove Spacers ex. 5: 5px
+$spacers: map-remove(
+  $spacers, 1, 2, 3, 4, 5
+);
+
+// Add Spacers ex. 5: 5px, padding, margin
+$spacers: map-merge((
+  5: 5px,
+  10: 10px,
+  15: 15px,
+  20: 20px,
+  25: 25px,
+  30: rem(30),
+  40: rem(40),
+  46: rem(46),
+), $spacers);
+
+// Remove sizes width & height
+$sizes: map-remove(
+  $sizes,
+  25,
+  50,
+  75,
+  auto
+);
+
+// Add sizes width & height
+$sizes: map-merge((
+  ),
+  $sizes
+);

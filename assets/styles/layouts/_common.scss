@@ -1,0 +1,17 @@
+.wmd-4 {
+	font-size: 16px !important;
+}	
+
+[aria-expanded="false"] {
+
+		> .aria-true {
+			display: none;
+		}
+}
+
+[aria-expanded="true"] {
+
+		> .aria-false {
+			display: none;
+		}
+}

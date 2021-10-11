@@ -1,0 +1,41 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "../node_modules/popper.js/dist/umd/popper.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/jquery-autocomplete/jquery.autocomplete.js",
+        "../node_modules/simplebar/dist/simplebar.js",
+        "../node_modules/select2/dist/js/select2.full.js",
+        "../node_modules/ion-rangeslider/js/ion.rangeSlider.js",
+        "../node_modules/magnific-popup/src/js/core.js",
+        "../node_modules/magnific-popup/src/js/image.js",
+        "../node_modules/magnific-popup/src/js/zoom.js",
+        "../node_modules/moment/moment.js",
+        "../node_modules/@simonwep/pickr/dist/pickr.es5.min.js",
+        "scripts/jquery-ui-only-sortable.js",
+        "scripts/bootstrap-datetimepicker.js",
+        
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "jquery.js": {
+      "files": [
+        "../node_modules/jquery/dist/jquery.js"
+      ]
+    },
+    "main.css": {
+      "files": [
+        "../node_modules/@simonwep/pickr/src/scss/themes/nano.scss",
+        "styles/external/datetimepicker.less",
+        "styles/main.scss"
+      ],
+      "main": true
+    }
+  },
+  "config": {
+    "devUrl": "",
+    "html": [ "./*.html" ]
+  }
+}

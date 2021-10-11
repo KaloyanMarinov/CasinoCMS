@@ -1,0 +1,14 @@
+// Typography
+
+@mixin text-emphasis-variant($parent, $color, $hover: darken($color, 5%)) {
+  #{$parent} {
+    color: $color !important;
+  }
+  a#{$parent},
+  button#{$parent} {
+    @include hover-focus {
+      color: $hover !important;
+      text-decoration: $link-hover-decoration;
+    }
+  }
+}

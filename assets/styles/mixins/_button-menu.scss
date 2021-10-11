@@ -1,0 +1,58 @@
+@mixin button-menu($size, $line-width, $line-height, $space, $bg-color, $bg-color-hover, $border-radius, $class-opened: menu-opened) {
+  position: relative;
+  @include size($size);
+  transition: none;
+
+    &:before,
+    &:after {
+      content: '';
+    }
+    
+    span,
+    &:before,
+    &:after {
+      @include element-center;
+      @include size($line-width, $line-height);
+      background-color: $bg-color;
+      border-radius: $border-radius;
+      transition: all 250ms ease;
+    }
+
+    &:before {
+      transform: translate(0, -$space);
+    }
+
+    &:after {
+      transform: translate(0, $space);
+    }
+
+    &:hover {
+
+        span,
+        &:before,
+        &:after {
+          background-color: $bg-color-hover;
+        }
+    }
+    
+    &[aria-expanded="true"],
+    .#{$class-opened} & {
+      
+        span {
+          opacity: 0
+        }
+
+        &:before,
+        &:after {
+          background-color: $bg-color-hover;
+        }
+
+        &:before {
+          transform: rotate(45deg) translate(0, 0);
+        }
+
+        &:after {
+         transform: rotate(-45deg) translate(0, 0);
+        }
+    }
+}

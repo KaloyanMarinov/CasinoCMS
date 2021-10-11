@@ -1,0 +1,140 @@
+.dropdown {
+  position: relative;
+
+  	&-toggle {
+  		position: relative;
+
+  			&[aria-expanded="true"] {
+
+		  			&:after {
+		  				content: '';
+		  				@include element-center(tag, false);
+		  				@include size(0);
+		  				border-right: $dropdown-arrow-width solid transparent;
+		  				border-bottom: $dropdown-arrow-width solid $dropdown-bg;
+		  				border-left: $dropdown-arrow-width solid transparent;
+		  			}
+  			}
+
+  	}
+
+  	&-menu {
+  		position: absolute;
+		  top: 100%;
+		  left: 0;
+		  z-index: $zindex-dropdown;
+		  float: left;
+		  font-size: $font-size-base; // Redeclare because nesting can cause inheritance issues
+		  color: $body-color;
+		  line-height: 1;
+		  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+		  list-style: none;
+		  background-color: $dropdown-bg;
+		  box-shadow: $dropdown-box-shadow;
+
+		  	&:not(.datetimepicker) {
+		  		min-width: 100%;
+		  	}
+
+		  	&:not(.show) {
+			  	display: none;
+			  }
+
+			  @include media-breakpoint-up(sm) {
+				  padding: $dropdown-padding;
+				  width: $dropdown-width;
+			  	@include border-radius($dropdown-border-radius);
+
+					  &-center {
+					  	top: 100% !important;
+					  	transform: translateX(-50%) !important;	
+					  	left: 50% !important;
+					  	margin: auto;
+					  	backface-visibility: hidden;
+					  }
+			  }
+
+			  @include media-breakpoint-down(xs) {
+				  width: $dropdown-width-xs;
+				  padding: $dropdown-padding-xs;
+				  margin-left: -15px;
+
+				  	.header & {
+				  		margin-left: -5px;
+				  	}
+			  }
+  	}
+
+  	&-item {
+  		position: relative;
+  		display: block;
+		  width: 100%;
+		  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+		  clear: both;
+		  font-weight: $font-weight-medium;
+		  color: $dropdown-link-color;
+
+		  	&:not(:last-child) {
+		  		border-bottom: 1px solid $dropdown-item-divider-color;
+		  	}
+
+
+				&:hover,
+			  &.active,
+			  &:active {
+			    color: $dropdown-link-hover-color;
+
+			    	.wmd {
+					  	color: $orange;
+					  }
+			  }
+  	}
+
+  	.form__custom-checkbox {
+  		width: 100%;
+  		padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+
+  			&:not(:last-child) {
+		  		border-bottom: 1px solid $dropdown-item-divider-color;
+		  	}
+  	}
+
+  	&-has-icon {
+  		padding-left: 33px;
+
+
+			  .wmd {
+			  	color: #d9d4e1;
+			  }
+
+			  .wmd-10 {
+			  	font-size: 13px;
+			  }
+
+			  .wmd-11 {
+			  	font-size: 19px;
+			  }
+
+			  .wmd-12,
+			  .wmd-13 {
+			  	font-size: 17px;
+			  }
+
+			  .wmd-14,
+			  .wmd-15,
+			  .wmd-16 {
+			  	font-size: 22px;
+			  }
+  	}
+
+  	&-icon {
+  		position: absolute;
+  		top: 0;
+  		bottom: 0;
+  		left: 0;
+  		width: 33px;
+  		@extend .d-flex;
+  		@extend .justify-content-center;
+  		@extend .align-items-center;
+  	}
+}

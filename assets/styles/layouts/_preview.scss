@@ -1,0 +1,52 @@
+
+.preview {
+
+		&__zoom {
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+
+				// &:hover {
+				// 	color: $purple;
+				// 	background-color: $white;
+				// }
+
+				&__icon {
+					top: 0;
+					left: 0;
+					@include size(32px);
+					color: $white;
+					font-size: 16px;
+					@include border-radius($border-radius - 1 0 $border-radius 0);
+					background-color: rgba($black, .85);
+					z-index: 2;
+					line-height: 32px;
+				}
+		}
+
+		&__thumb {
+			height: 0;
+			padding-bottom: 113%;
+			background-image: linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4),linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4);
+	    background-position: 0 0, 10px 10px;
+	    background-size: 20px 20px;
+		}
+
+		&__delete {
+			color: #a8a5ae;
+
+				.wmd {
+					color: #cccccc;
+					font-size: 18px;
+				}
+
+				&:hover {
+					color: $red;
+
+						.wmd {
+							color: inherit;
+						}
+				}
+		}
+}

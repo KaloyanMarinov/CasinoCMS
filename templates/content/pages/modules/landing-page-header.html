@@ -1,0 +1,247 @@
+<div class="pages__modules__item mb-10 pl-sm-30 pl-15 pr-sm-15 pr-5 rounded">
+  <div class="row align-items-center">
+    <div class="col-sm col-12">
+      <button type="button" data-toggle="collapse" data-target="#components-7" aria-expanded="false" class="pages__modules__title w-100 text-left font-weight-medium"><i class="d-inline-block wmd wmd-25 mr-sm-20 mr-10"></i>Landing page header</button>
+    </div>
+
+    <div class="col-sm-auto col-12">
+      <div class="row align-items-center no-gutters">
+        <div class="col-sm-auto col">
+          <div class="d-flex align-items-center mr-5">
+            <label class="mr-15">Enabled</label>
+
+            <label class="form__custom-check">
+              <input type="checkbox" class="form__custom-check__input" checked>
+              <span class="form__custom-check__control"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="col-auto">
+          <button type="button" class="px-10 py-15 ui-sortable-move"><i class="wmd wmd-60"></i></button>
+        </div>
+
+        <div class="col-auto">
+          <button type="button" class="px-10 py-15"><i class="wmd wmd-77"></i></button>
+        </div>
+
+        <div class="col-auto">
+          <button type="button" class="px-10 py-15"><i class="wmd wmd-22"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse" id="components-7">
+    <div class="pt-10 pb-sm-20 pb-15">
+      <div class="row">
+        <div class="col-md-6 col-12 mb-25">
+          <div class="form__group">
+            <div class="form__row align-items-center">
+              <div class="col-sm-2 col-3">
+                <label>Title</label>
+              </div>
+    
+              <div class="col">
+                <input type="text" class="form__control">
+              </div>
+    
+              <div class="col-auto">
+                <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="" data-original-title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-12 mb-25">
+          <div class="form__group">
+            <div class="form__row align-items-center">
+              <div class="col-sm-2 col-3">
+                <label>Background color</label>
+              </div>
+    
+              <div class="col">
+                <div class="position-relative font-size-base">
+                  <input type="text" class="form__control form__control--color-picker js-color-picker" value="#58247D">
+                  <span class="color-picker-bgcircle position-absolute m-auto rounded-circle" style="background-color: #58247D"></span>
+                </div>
+              </div>
+    
+              <div class="col-auto">
+                <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <div class="form__row align-items-sm-start align-items-center">
+          <div class="col-lg-1 col-sm-2 col order-sm-1">
+            <label class="mb-10">Content</label>
+          </div>
+
+          <div class="col-auto order-sm-3">
+            <div class="form__info text-center mb-10" tabindex="0" data-toggle="tooltip" data-placement="left" title="" data-original-title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+
+          <div class="col-sm col-12 order-sm-2">
+            <textarea name="editor1" class="editor"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="mb-15">Images</h3>
+
+      <div class="divider mb-20"></div>
+
+      <div class="row form__group">
+        <div class="col-sm-3 col-6">
+          <h4 class="mb-10 text-gray-700 font-weight-medium">Background image</h4>
+          <p class="mb-15 text-purple font-size-sm">Recomended size: 380x530px</p>
+          <div class="mb-15">
+            <input type="text" class="form__control form__control--sm" placeholder="Add alt tag">
+          </div>
+
+          <div class="preview position-relative text-center">
+            <figure class="preview__thumb d-block mb-15 rounded overflow-hidden text-center position-relative">
+              <a href="../dist/images/examples/kaiser-slots.png" class="preview__zoom d-flex justify-content-center align-items-center position-absolute">
+                <i class="preview__zoom__icon wmd wmd-45 position-absolute"></i>
+                <img src="../dist/images/examples/kaiser-slots.png" alt="">
+              </a>
+            </figure>
+
+            <label class="form__custom-file mb-10">
+              <input type="file" class="form__custom-file__input">
+              <span class="form__custom-file__label text-center">choose file</span> <i class="wmd wmd-46 ml-10"></i>
+            </label>
+
+            <button type="button" class="preview__delete d-block w-100 text-center text-uppercase font-size-sm font-weight-medium">delete <i class="wmd wmd-31 ml-5"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider mb-25"></div>
+
+      <div class="form__group d-flex align-items-center">
+        <h3 class="mr-15">Advanced settings</h3>
+
+        <label class="form__custom-check">
+          <input type="checkbox" class="form__custom-check__input" data-toggle="collapse" data-target="#landingHeaderSettings">
+          <span class="form__custom-check__control"></span>
+        </label>
+      </div>
+
+      <div id="landingHeaderSettings" class="collapse">
+        <div class="row">
+          <div class="col-md-6 col-12 mb-25">
+            <div class="form__group">
+              <div class="form__row align-items-center">
+                <div class="col-sm-2 col-3">
+                  <label>Section additional css classes</label>
+                </div>
+      
+                <div class="col">
+                  <input type="text" class="form__control">
+                </div>
+      
+                <div class="col-auto">
+                  <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="" data-original-title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__group pt-md-5">
+              <div class="form__row align-items-center">
+                <div class="col-sm-2 col-3">
+                  <label>Section ID</label>
+                </div>
+      
+                <div class="col">
+                  <input type="text" class="form__control">
+                </div>
+      
+                <div class="col-auto">
+                  <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="" data-original-title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-12 mb-25">
+            <div class="form__group--checks mb-sm-0 mb-25">
+              <div class="row">
+                <div class="col-sm col-12 mb-sm-10">
+                  <div class="form__row align-items-center">
+                    <div class="col-sm-12 col">
+                      <label class="d-block mb-5 text-nowrap">Hide on mobile</label>
+                    </div>
+      
+                    <div class="col-sm-12 col-auto">
+                      <label class="form__custom-check">
+                        <input type="checkbox" class="form__custom-check__input" checked>
+                        <span class="form__custom-check__control"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-12 d-sm-none">
+                  <div class="divider my-5 w-100"></div>
+                </div>
+      
+                <div class="col-sm col-12 mb-sm-10">
+                  <div class="form__row align-items-center">
+                    <div class="col-sm-12 col">
+                      <label class="d-block mb-5 text-nowrap">Hide on tablet</label>
+                    </div>
+      
+                    <div class="col-sm-12 col-auto">
+                      <label class="form__custom-check">
+                        <input type="checkbox" class="form__custom-check__input">
+                        <span class="form__custom-check__control"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 d-sm-none">
+                  <div class="divider my-5 w-100"></div>
+                </div>
+      
+                <div class="col-sm col-12 mb-sm-10">
+                  <div class="form__row align-items-center">
+                    <div class="col-sm-12 col">
+                      <label class="d-block mb-5 text-nowrap">Hide on desktop</label>
+                    </div>
+      
+                    <div class="col-sm-12 col-auto">
+                      <label class="form__custom-check">
+                        <input type="checkbox" class="form__custom-check__input">
+                        <span class="form__custom-check__control"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-sm-5 col-12">
+          <div class="row">
+            <div class="col-6">
+              <button type="submit" class="btn btn--orange btn--round w-100" data-dismiss="modal"><i class="wmd wmd-21 mr-10"></i>save</button>
+            </div>
+
+            <div class="col-6">
+              <button class="btn btn--outline-gray btn--round w-100 px-0" data-dismiss="modal"><i class="wmd wmd-23 mr-15"></i> cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

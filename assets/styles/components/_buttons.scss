@@ -1,0 +1,207 @@
+//
+// Base styles
+//
+
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  text-transform: uppercase;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-height, $btn-padding-x, $btn-font-size, $btn-line-height);
+  @include border-radius($btn-border-radius);
+
+    &--round {
+      @include border-radius($btn-border-radius-round);
+    }
+
+    @at-root a#{&}, label#{&} {
+      @extend .d-inline-flex;
+      @extend .align-items-center;
+      @extend .justify-content-center;
+      transition: $default-transition;
+      cursor: pointer;
+    }
+
+    .wmd-24 { font-size: 14px; }
+    .wmd-25 { font-size: 10px; }
+    .wmd-32 { font-size: 18px; }
+    .wmd-33 { font-size: 17px; }
+    .wmd-48 { font-size: 16px; }
+    .wmd-51 { font-size: 22px; }
+    .wmd-52, .wmd-53 { font-size: 20px; }
+    .wmd-66 { font-size: 23px; }
+    .wmd-39 { font-size: 26px; }
+    .wmd-72 { font-size: 20px; }
+
+
+    &--lg,
+    &--lg-round {
+      @include button-size($btn-height-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg);
+
+        .wmd-21 {
+          font-size: 12px;
+        }
+
+        .wmd-22,
+        .wmd-31 {
+          font-size: 18px;
+        }
+
+        .wmd-30 {
+          font-size: 10px;
+        }
+
+        .wmd-62 {
+          font-size: 18px;
+        }
+
+        .wmd-63 {
+          font-size: 25px;
+          vertical-align: sub;
+        }
+    }
+
+    &--lg {
+      @include border-radius($btn-border-radius-lg);
+
+        &-round {
+          @include border-radius($btn-border-radius-lg-round);
+        }
+    }
+
+    &--sm,
+    &--sm-round {
+      @include button-size($btn-height-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm);
+    }
+
+    &--sm {
+      @include border-radius($btn-border-radius-sm);
+
+        &-round {
+          @include border-radius($btn-border-radius-sm-round);
+        }
+    }
+
+    &--reset-filter {
+      color: rgba($purple, .2);
+
+        &:hover {
+          color: $purple; 
+        }
+    }
+
+    &--export {
+      font-size: 16px;
+      color: $gray-400;
+
+          &:hover {
+            color: $purple;
+          }
+
+          span {
+            text-decoration: underline;
+          }
+    }
+
+    &--link {
+
+        &:hover {
+          color: $purple;
+        }
+
+        .wmd-72 { font-size: 18px; }
+    }
+
+    &--show-more {
+      font-size: 16px;
+
+        .wmd-25 {
+          font-size: 10px;
+          color: #cac9cb;
+          transition: $default-transition;
+        }
+
+        &:hover {
+          color: $orange;
+
+            .wmd-25 {
+              color: $orange;
+            }
+        }
+    }
+
+    &--add {
+      min-width: 40px;
+    }
+}
+
+//
+// Alternate buttons
+//
+@each $color, $value in $btn-colors {
+  $text-color: map-get($value, color);
+  $background: map-get($value, background);
+  $hover-color :map-get($value, hover-color);
+  $hover-background: map-get($value, hover-background);
+
+    .btn--#{$color} {
+      @include button-variant(
+        $text-color,
+        $background,
+        $hover-color,
+        $hover-background,
+      );
+    }
+}
+
+@each $color, $value in $btn-outline-colors {
+  $text-color: map-get($value, color);
+  $border: map-get($value, border);
+  $hover-color :map-get($value, hover-color);
+  $hover-background: map-get($value, hover-background);
+  $hover-border: map-get($value, hover-border);
+
+    .btn--outline-#{$color} {
+      @include button-outline-variant(
+        $text-color,
+        $border,
+        $hover-color,
+        $hover-background,
+        $hover-border
+      );
+    }
+}
+
+// Close
+.close {
+  display: inline-block;
+  vertical-align: middle;
+  @include size(26px);
+  color: #737373;
+  font-size: 10px;
+  line-height: 26px;
+  background-color: #edebf0;
+  border-radius: 50%;
+
+    .wmd-4 {
+      font-size: inherit !important;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $purple;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .btn {
+
+        &--add {
+          padding-left: 11px;
+          padding-right: 11px;
+        }
+    }
+}

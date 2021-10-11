@@ -1,0 +1,116 @@
+<form>
+  <div class="row align-items-center">
+    <div class="col-md-6 col-12 mb-25">
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Menu ID</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-12 mb-25">
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Description</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="h2 mb-15">Menu links</h2>
+
+  <div class="table-responsive-shadow mb-25">
+    <div class="table-responsive">
+      <table class="table table--striped table--hover table--rounded" id="games">
+        <thead class="thead--light">
+          <tr>
+            <th><button class="table__sort table__sort--up">Anchor</button></th>
+            <th><button class="table__sort">URL</button></th>
+            <th>Title tag</th>
+            <th class="text-center">No Follow</th>
+            <th class="text-center">New Tab</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody class="js-table-sortable">
+          <tr class="tr--card">
+            <td data-card-title="Menu ID" class="td--card td--card--half">Homepage</td>
+            <td data-card-title="URL" class="td--card td--card--half">/en/</td>
+            <td data-card-title="Title tag" class="td--card td--card--half">Homepage</td>
+            <td data-card-title="No Follow" class="td--card td--card--half text-center">No</td>
+            <td data-card-title="New Tab" class="td--card td--card--half text-center">Yes</td>
+            <td class="td--card td--card--half td--card-text-center text-center">
+              <button type="button" data-toggle="modal" data-target="#editLinkModel" class="btn btn--outline-gray btn--sm-round">edit</a>
+              <button type="button" class="btn ui-sortable-move px-0 ml-5"><i class="wmd wmd-60"></i></button>
+            </td>
+          </tr>
+          <tr class="tr--card">
+            <td data-card-title="Menu ID" class="td--card td--card--half">About Us</td>
+            <td data-card-title="URL" class="td--card td--card--half">/en/about-us/</td>
+            <td data-card-title="Title tag" class="td--card td--card--half">About Us</td>
+            <td data-card-title="No Follow" class="td--card td--card--half text-center">No</td>
+            <td data-card-title="New Tab" class="td--card td--card--half text-center">Yes</td>
+            <td class="td--card td--card--half td--card-text-center text-center">
+              <button type="button" data-toggle="modal" data-target="#editLinkModel" class="btn btn--outline-gray btn--sm-round">edit</a>
+              <button type="button" class="btn ui-sortable-move px-0 ml-5"><i class="wmd wmd-60"></i></button>
+            </td>
+          </tr>
+          <tr class="tr--card">
+            <td data-card-title="Menu ID" class="td--card td--card--half">Contact Us</td>
+            <td data-card-title="URL" class="td--card td--card--half">/en/contact-us/</td>
+            <td data-card-title="Title tag" class="td--card td--card--half">Contact Us</td>
+            <td data-card-title="No Follow" class="td--card td--card--half text-center">No</td>
+            <td data-card-title="New Tab" class="td--card td--card--half text-center">Yes</td>
+            <td class="td--card td--card--half td--card-text-center text-center">
+              <button type="button" data-toggle="modal" data-target="#editLinkModel" class="btn btn--outline-gray btn--sm-round">edit</a>
+              <button type="button" class="btn ui-sortable-move px-0 ml-5"><i class="wmd wmd-60"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <button type="button" data-toggle="modal" data-target="#editLinkModel" class="btn btn--round btn--orange btn--add mb-25 font-weight-black"><i class="wmd wmd-24 mr-sm-20"></i><span class="d-sm-inline d-none">Add new</span></button>
+
+  <div class="divider pt-sm-25 pt-20">
+    <div class="row justify-content-sm-between">
+      <div class="col-lg-4 col-sm-8 col-12">
+        <div class="row">
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="submit" class="btn btn--orange btn--lg-round w-100"><i class="wmd wmd-21 mr-10"></i>save</button>
+          </div>
+
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="button" class="btn btn--purple btn--lg-round w-100"><i class="wmd wmd-30 mr-10"></i>Duplicate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-sm-4 col-12">
+        <button type="button" class="btn btn--gray btn--lg-round w-100" data-toggle="modal" data-target="#confirmModdal"><i class="wmd wmd-31 mr-10"></i>Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

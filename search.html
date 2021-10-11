@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Search" })
+  <body>
+
+    @@include('nav.html')
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header.html', { "search-open": true })
+      @@include('search.html', {"open": true})
+
+      <div class="w-100 pt-sm-30 pt-20">
+        <div class="container">
+          <h2 class="h3 mb-20">Games (3 results)</h2>
+          @@include('games-table.html')
+          <h2 class="h3 my-25">Races (3 results)</h2>
+          @@include('games-table.html')
+          <h2 class="h3 my-25">Players (3 results)</h2>
+          @@include('games-table.html')
+        </div>
+      </div>
+
+       @@include('footer.html')
+    </main>
+    
+    @@include('foot.html')
+  </body>
+</html>

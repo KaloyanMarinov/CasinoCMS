@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Dashboard" })
+  <body>
+
+    @@include('nav.html')
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header.html', { "search-open": false })
+      @@include('search.html')
+
+      <div class="w-100 pt-sm-30 pt-20">
+        <div class="container">
+          <div class="row d-sm-block clearfix">
+            <div class="col-sm-9 col-12 float-sm-right">
+              <div class="row">
+                @@loop('dashboard/box.html', [
+                  { "number": "4,584", "text": "Registered Players", "bg": "players" },
+                  { "number": "24,584", "text": "Live Games", "bg": "games" },
+                  { "number": "24,584", "text": "Active Races", "bg": "races" }
+                ])
+              </div>
+            </div>
+
+            <div class="col-sm-3 col-12 float-sm-left">
+              <div class="row">
+                @@include('dashboard/players-chart.html')
+                @@include('dashboard/bonuses-chart.html')
+              </div>
+            </div>
+
+            <div class="col-sm-9 col-12 float-sm-right">
+              @@include('dashboard/table.html')
+            </div>
+          </div>
+        </div>
+      </div>
+
+       @@include('footer.html')
+    </main>
+    
+    @@include('foot.html')
+  </body>
+</html>

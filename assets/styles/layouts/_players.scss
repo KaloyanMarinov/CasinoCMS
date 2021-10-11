@@ -1,0 +1,28 @@
+.player {
+
+    &__collapse {
+      
+        &:not(.show) {
+          display: block;
+          height: 135px;
+          overflow: hidden;
+        }
+    }
+
+    &__expand {
+
+        &[aria-expanded="false"] {
+
+            .active {
+              display: none;
+            }
+        }
+
+        &[aria-expanded="true"] {
+
+            .default {
+              display: none;
+            }
+        }
+    }
+}

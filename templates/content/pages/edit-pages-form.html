@@ -1,0 +1,129 @@
+@@include('translation-options.html')
+
+<form>
+  <div class="row">
+    <div class="col-md-6 col-12 mb-25">
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Title</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control" value="">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Url</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control" value="">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Meta Description</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-12 mb-25">
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Meta Title</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Template</label>
+          </div>
+
+          <div class="col">
+            <select class="form__control js-select2">
+              <option value=""></option>
+              <option value="">Option 1</option>
+              <option value="">Option 2</option>
+              <option value="">Option 3</option>
+              <option value="">Option 4</option>
+            </select>
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mb-20">Components</h3>
+
+  @@include('content/pages/components.html')
+
+  <button type="button" data-toggle="modal" data-target="#pagesComponentsModal" class="btn btn--round btn--info w-100 mb-20 font-weight-black"><i class="wmd wmd-24 mr-10"></i>add component</button>
+
+  <div class="divider pt-sm-25 pt-20">
+    <div class="row justify-content-sm-between">
+      <div class="col-lg-4 col-sm-6 col-12">
+        <div class="row">
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="submit" class="btn btn--orange btn--lg-round w-100"><i class="wmd wmd-21 mr-10"></i>save</button>
+          </div>
+
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="button" class="btn btn--purple btn--lg-round w-100"><i class="wmd wmd-30 mr-10"></i>Duplicate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-12">
+        <div class="row">
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="button" class="btn btn--gray btn--lg-round w-100"><i class="wmd wmd-99 mr-10"></i>Preview</button>
+          </div>
+
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="button" class="btn btn--outline-gray btn--lg-round w-100" data-toggle="modal" data-target="#confirmModdal"><i class="wmd wmd-31 mr-10"></i>Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

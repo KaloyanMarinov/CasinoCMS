@@ -1,0 +1,64 @@
+
+.search {
+	z-index: $zindex-fixed;
+	border-bottom: 1px solid $body-bg;
+
+		&__input {
+			font-size: 24px;
+			color: $gray-700;
+			font-weight: $font-weight-bold;
+			z-index: 2;
+
+				&::placeholder {
+					color: #cecece;
+					font-weight: $font-weight-normal;
+				}
+		}
+
+		&__btn {
+			color: $black;
+			font-size: 25px;
+			opacity: .2;
+
+				.wmd {
+					transform: translateY(3px);
+				}
+
+				&:hover {
+					opacity: 1;
+				}
+		}
+
+		[class^="col"] {
+			position: static;
+		}
+}
+
+@include media-breakpoint-up(sm) {
+
+		.search {
+
+				&-height {
+					height: $header-height;
+				}
+
+
+				&__btn {
+					width: 53px;
+				}
+		}
+}
+
+@include media-breakpoint-down(xs) {
+
+		.search {
+
+				&-height {
+					height: $header-height-xs;
+				}
+
+				&__btn {
+					width: 43px;
+				}
+		}
+}

@@ -1,0 +1,42 @@
+
+
+.alert {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: $font-weight-medium;
+
+		.wmd {
+			font-size: 	20px;
+			vertical-align: -3px;
+		}
+
+		&-warning {
+			color: $warning-color;
+			border-color: $warning-border-color;
+			background-color: $warning-bg-color;
+
+				.wmd {
+					color: $warning-border-color;
+				}
+		}
+
+		&-success {
+			color: $success-color;
+			border-color: $success-border-color;
+			background-color: $success-bg-color;
+
+				.wmd {
+					color: $success-border-color;
+				}
+		}
+
+		&-danger {
+			color: $danger-color;
+			border-color: $danger-border-color;
+			background-color: $danger-bg-color;
+
+				.wmd {
+					color: $danger-border-color;
+				}
+		}
+}

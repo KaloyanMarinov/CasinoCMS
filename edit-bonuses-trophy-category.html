@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Edit Feature" })
+  <body>
+
+    @@include('nav.html')
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header.html', { "search-open": false })
+      @@include('search.html')
+
+      <div class="w-100 pt-sm-30 pt-20">
+        <div class="container">
+          <ul class="breadcrumb mb-20">
+            <a href="dashboard.html" class="breadcrumb__item">Home</a>
+            <a href="bonuses.html" class="breadcrumb__item">Bonuses</a>
+            <a href="bonuses-trophy-categories.html" class="breadcrumb__item">Trophy Categories</a>
+            <span class="breadcrumb__item active">Edit</span>
+          </ul>
+
+          <div class="row align-items-center mb-15">
+            <div class="col-sm col-12 mb-sm-0 mb-15">
+              <h1 class="h1-rem-sm h2">Game Lover</h1>
+            </div>
+
+            <div class="col-xl-2 col-sm-3">
+              <a href="" class="btn btn--round btn--outline-gray btn--add w-100 font-weight-black">View Trophy Wiki</a>
+            </div>
+          </div>
+
+          <div class="languages">
+            <button class="language__item language__item--mobile d-md-none py-15 w-100 mr-0 text-left" type="button" data-toggle="collapse" data-target="#language" aria-expanded="false">
+              <img src="../dist/images/icons/usa.svg" alt="" class="mr-10"> Global English <i class="wmd wmd-25 float-right"></i>
+            </button>
+
+            <div class="collapse language d-md-flex flex-md-wrap nav" id="language" role="tablist">
+              <a href="#lang-1" data-toggle="tab" role="tab" aria-selected="true" class="language__item py-15 active">
+                <img src="../dist/images/icons/usa.svg" alt="" class="mr-10"> Global English
+              </a>
+              <a href="#lang-2" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">
+                <img src="../dist/images/icons/uk.svg" alt="" class="mr-10"> British
+              </a>
+              <a href="#lang-3" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">
+                <img src="../dist/images/icons/swe.svg" alt="" class="mr-10"> Swedish
+              </a>
+              <a href="#lang-4" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">
+                <img src="../dist/images/icons/fin.svg" alt="" class="mr-10"> Finnish
+              </a>
+              <a href="#lang-5" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">
+                <img src="../dist/images/icons/nor.svg" alt="" class="mr-10"> Norwegian
+              </a>
+              <a href="#lang-6" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">
+                <img src="../dist/images/icons/ca.svg" alt="" class="mr-10"> Canadian
+              </a>
+              <a href="#lang-7" data-toggle="tab" role="tab" aria-selected="false" class="language__item py-15">
+                <img src="../dist/images/icons/new-zealand.svg" alt="" class="mr-10"> New Zealand
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white py-30">
+          <div class="container">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="lang-1" role="tabpanel">@@include('bonuses/trophy/edit-trophy-form-global.html')</div>
+              <div class="tab-pane fade" id="lang-2" role="tabpanel">@@include('bonuses/trophy/edit-trophy-form.html')</div>
+              <div class="tab-pane fade" id="lang-3" role="tabpanel">@@include('bonuses/trophy/edit-trophy-form.html')</div>
+              <div class="tab-pane fade" id="lang-4" role="tabpanel">@@include('bonuses/trophy/edit-trophy-form.html')</div>
+              <div class="tab-pane fade" id="lang-5" role="tabpanel">@@include('bonuses/trophy/edit-trophy-form.html')</div>
+              <div class="tab-pane fade" id="lang-6" role="tabpanel">@@include('bonuses/trophy/edit-trophy-form.html')</div>
+              <div class="tab-pane fade" id="lang-7" role="tabpanel">@@include('bonuses/trophy/edit-trophy-form.html')</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       @@include('footer.html')
+    </main>
+    @@include('confirm-modal.html')
+    @@include('foot.html')
+  </body>
+</html>

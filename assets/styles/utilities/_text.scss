@@ -1,0 +1,42 @@
+@each $color, $value in $colors {
+	@include text-emphasis-variant(".text-#{$color}", $value);
+}
+
+.font-size-sm {
+	font-size: $font-size-sm !important;
+}
+
+.font-size-base {
+	font-size: $font-size-base !important;
+}
+
+.font-size-lg {
+	font-size: $font-size-lg !important;
+}
+
+.font-size-xl {
+	font-size: $font-size-xl !important;
+}
+
+.font-weight-medium {
+	font-weight: $font-weight-medium !important;
+}
+
+.font-weight-black {
+	font-weight: $font-weight-black !important;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+
+			.font-size-lg-rem#{$infix} {
+				font-size: rem($font-size-lg) !important;
+			}
+
+			.font-size-xl-rem#{$infix} {
+				font-size: rem($font-size-xl) !important;
+			}
+  }
+}

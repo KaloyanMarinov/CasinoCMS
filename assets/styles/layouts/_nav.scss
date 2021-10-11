@@ -1,0 +1,139 @@
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+
+.nav-menu {
+	@include fixed-center(true, false, false);
+	height: 100vh;
+	width: $nav-width;
+	background-color: $nav-bgcolor;
+	overflow: hidden;
+	transform: translate(-$nav-width, 0);
+	transition: $default-transition;
+	z-index: 1;
+
+		&__close {
+			color: rgba($white, .2);
+			
+			@include media-breakpoint-up(sm) {
+				flex: 0 0 $header-height;
+				max-height: $header-height;
+			}
+			@include media-breakpoint-down(xs) {
+				flex: 0 0 $header-height-xs;
+				max-height: $header-height-xs;
+			}
+
+				.wmd {
+					font-size: 18px;
+				}
+
+				&:hover {
+					color: $white;
+					background-color: $purple;
+				}
+		}
+
+		&__inside {
+			overflow: auto;
+		}
+
+		&__backdrop {
+			display: none;
+			@include fixed-center;
+			overflow: hidden;
+			z-index: 3;
+
+				.nav-menu--open ~ & {
+					display: block;
+					transform: translate($nav-width, 0);
+				}
+		}
+
+		&--open {
+			transform: translate(0);
+		}
+}
+
+
+.menu {
+
+		a {
+			display: flex;
+			align-items: center;
+		}
+
+		&__item {
+
+				&__link {
+					padding: 18px 15px 18px 25px;
+					color: #9e95ab;
+					line-height: 20px;
+						
+						.menu__item--open &,
+						&:hover {
+							color: $white;
+							background-color: $submenu-bgcolor;
+						}
+
+						.wmd {
+							width: 20px;
+						}
+
+						.wmd-5, .wmd-7, .wmd-37, .wmd-41, .wmd-42 { font-size: 20px; }
+						.wmd-6 { font-size: 13px; }
+						.wmd-8 { font-size: 15px; }
+						.wmd-9 { font-size: 18px; }
+						.wmd-35, .wmd-38, .wmd-39, .wmd-40, .wmd-43, .wmd-44 { font-size: 21px; }
+						.wmd-36, .wmd-63 { font-size: 23px; }
+				}
+		}
+}
+
+.sub-menu {
+	background-color: $submenu-bgcolor;
+	display: none;
+
+		&__active {
+			background-color: rgba($orange, .1);
+
+			a {
+				color: $orange;
+
+				&:before {
+					border-color: $orange;
+				}
+			}
+		}
+
+		&__link {
+			padding: 20px 15px 20px 55px;
+			color: $submenu-link-color;
+
+				&:before {
+					content: '';
+					@include size(6px);
+					@include element-center(tag, true, false, true, false);
+					left: 35px;
+					border-top: 2px solid $submenu-link-color;
+					border-right: 2px solid $submenu-link-color;
+					transform: rotate(45deg);
+				}
+
+				&:hover {
+					color: $orange;
+					background-color: rgba($orange, .1);
+
+						&:before {
+							border-color: $orange;
+						}
+				}
+		}
+}

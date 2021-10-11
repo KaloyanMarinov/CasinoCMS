@@ -1,0 +1,73 @@
+<form>
+  <div class="row">
+    <div class="col-md-6 col-12 mb-25">
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Role name</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row align-items-center justify-content-between">
+    <div class="col pr-0 mb-10">
+      <label class="form__custom-checkbox">
+        <input type="checkbox" class="form__custom-checkbox__input js-roles-all-access">
+        <span class="form__custom-checkbox__control"></span>
+        <span class="form__custom-checkbox__label ml-sm-5">Modules access</span>
+      </label>
+    </div>
+
+    <div class="col-auto text-right pl-0 pr-5 mb-10">
+      <button type="button" class="roles__toggle__btn font-size-sm js-roles-expand">Expand all<i class="wmd wmd-25 ml-10"></i></button>
+      <button type="button" class="roles__toggle__btn roles__toggle__btn--collapse font-size-sm js-roles-collapse">Collapse all<i class="wmd wmd-25 ml-10"></i></button>
+    </div>
+  </div>
+
+  @@loop('access/roles/roles-item.html', [
+    { "name" : "Casinos", "id": "Casinos"},
+    { "name" : "Bonuses", "id": "Bonuses"},
+    { "name" : "Wishing well", "id": "WishingWell"},
+    { "name" : "Coins frequency", "id": "CoinsFrequency"},
+    { "name" : "Races", "id": "Races"},
+    { "name" : "Players feed", "id": "PlayersFeed"},
+    { "name" : "Promotions", "id": "Promotions"},
+    { "name" : "Guides", "id" : "Guides"},
+    { "name" : "FAQ", "id" : "FAQ"},
+    { "name" : "Blog", "id" : "Blog"},
+    { "name" : "Players", "id" : "Players"},
+    { "name" : "Reports", "id" : "Reports"},
+    { "name" : "Access", "id": "Access"},
+    { "name" : "Settings", "id" : "Settings"}
+  ])
+
+  <div class="pt-sm-25 pt-20">
+    <div class="row justify-content-sm-between">
+      <div class="col-lg-4 col-sm-8 col-12">
+        <div class="row">
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="submit" class="btn btn--orange btn--lg-round w-100"><i class="wmd wmd-21 mr-10"></i>save</button>
+          </div>
+
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="button" class="btn btn--purple btn--lg-round w-100"><i class="wmd wmd-30 mr-10"></i>Duplicate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-sm-4 col-12">
+        <button type="button" class="btn btn--gray btn--lg-round w-100" data-toggle="modal" data-target="#confirmModdal"><i class="wmd wmd-31 mr-10"></i>Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,16 @@
+
+
+
+@mixin form-outline-variant($color) {
+	color: $color;
+	border-color: $color;
+	
+	&::placeholder {
+    color: $color;
+  }
+
+		&:focus {
+	    color: $color;
+	    border-color: $color;
+	  }
+}

@@ -1,0 +1,40 @@
+// Images path
+// ------------
+$images: '../images/';
+$images-arrows: '#{$images}arrows/';
+$images-background: '#{$images}backgrounds/';
+$images-buttons: '#{$images}buttons/';
+$images-examples: '#{$images}examples/';
+$images-icons: '#{$images}icons/';
+$images-img: '#{$images}img/';
+$images-logos: '#{$images}logos/';
+$images-separetor: '#{$images}separetors/';
+$images-shadows: '#{$images}shadows/';
+$images-sprites: '#{$images}sprites/';
+$images-svg: '#{$images}svg/';
+
+$font-path: "../fonts/" !default;
+
+$default-transition: 250ms ease-in-out !default;
+
+// Nav
+$nav-width: 235px;
+$nav-bgcolor: #1f0d38;
+$submenu-bgcolor: #2a1942;
+$submenu-link-color: #a9a6af;
+
+// Header
+$header-height: rem(64);
+$header-height-xs: 60px;
+$header-col-width: 280px;
+
+// Card
+$card-border-radius: 10px;
+$card-header-bgcolor: #f5f4f7;
+$dropdown-border-radius: 10px;
+
+// Search
+$search-height: rem(90);
+$search-height-xs: 60px;
+$search-btn-width: 53px;
+$search-btn-width-xs: 63px;

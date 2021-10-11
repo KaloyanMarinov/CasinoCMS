@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+	@@include('head.html', { "title": "Wishing well Reports Results" })
+	<body>
+
+		@@include('nav.html')
+
+		<main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+			@@include('header.html', { "search-open": false })
+			@@include('search.html')
+
+			<div class="w-100 pt-sm-30 pt-20">
+				<div class="container">
+					<ul class="breadcrumb mb-20">
+						<a href="dashboard.html" class="breadcrumb__item">Home</a>
+						<a href="#" class="breadcrumb__item">Reports</a>
+						<a href="reports-wishing-well.html" class="breadcrumb__item">Wishing Well</a>
+						<span class="breadcrumb__item active">Results</span>
+					</ul>
+
+					<div class="row align-items-center mb-15">
+						<div class="col-sm col-12 mb-sm-0 mb-15">
+							<h1 class="h1-rem-sm h2">Wishing well Reports</h1>
+						</div>
+
+						<div class="col-xl-2 col-md-3 col-sm-4 col-12">
+							<a href="" class="btn btn--round btn--outline-gray btn--add w-100 font-weight-black">reports Wiki</a>
+						</div>
+					</div>
+
+					<div class="row align-items-center">
+						<div class="col-xl-2 col-md-3 col-sm-4 col-12 order-sm-2 mb-15">
+							<a href="reports-wishing-well-generate.html" class="btn btn--round btn--orange px-5 btn--add w-100 font-weight-black"><i class="wmd wmd-24 mr-sm-20 mr-10"></i>generate reports</a>
+						</div>
+						<div class="col-sm col-12 order-sm-1 mb-15">
+							<h2 class="h3 text-purple font-weight-bold">Reports results</h2>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-f5f4f7">
+					<div class="container">
+						<div class="py-sm-20 py-15">
+							<div class="row align-items-center justify-content-sm-between">
+								<div class="col-sm-auto col-12 mb-sm-0 mb-15">
+									<h3 class="text-gray-700">Lifetime Wishing well reports</h3>
+								</div>
+								<div class="col-sm-auto col-12">
+									<div class="row align-items-center text-sm-left text-center">
+										<div class="col">
+											<button class="btn--export text-nowrap">
+												<span class="align-middle mr-10"><img src="../dist/images/svg/pdf.svg" alt=""></span>
+												<span class="align-middle">Export PDF</span>
+											</button>
+										</div>
+
+										<div class="col">
+											<button class="btn--export text-nowrap">
+												<span class="align-middle mr-10"><img src="../dist/images/svg/xls.svg" alt=""></span>
+												<span class="align-middle">Export XLS</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="divider py-sm-20 py-15">
+							<div class="row align-items-center">
+								<div class="col-sm-auto col-12 order-sm-2 mb-sm-0 mb-15">
+									<div class="row no-gutters">
+										<div class="col">
+											<button type="button" class="btn btn--purple btn--round w-100"><i class="wmd wmd-48 mr-10 align-middle"></i> <span class="align-middle">Filter</span></button>
+										</div>
+										<div class="col-auto">
+											<button type="button" class="btn btn--reset-filter px-5 ml-5"><i class="wmd wmd-66"></i></button>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm col-12 order-sm-1">
+									<div class="d-flex flex-wrap"></div>
+									<button type="button" class="report__players__choice">Players data<span class="report__players__choice__remove"></span></button>
+									<button type="button" class="report__players__choice">Wishing Well<span class="report__players__choice__remove"></span></button>
+								</div>
+							</div>
+						</div>
+
+						@@include('reports/wishing-well/results-table.html')
+
+						<div class="row align-items-center justify-content-sm-between py-15">
+							<div class="col-sm-auto col-12 mb-sm-0 mb-15">
+								<p class="text-gray-500">45 234 Results</p>
+							</div>
+
+							<div class="col-sm-auto col-12">
+								<div class="row align-items-center text-sm-left text-center">
+									<div class="col">
+										<button class="btn--export text-nowrap">
+											<span class="align-middle mr-10"><img src="../dist/images/svg/pdf.svg" alt=""></span>
+											<span class="align-middle">Export PDF</span>
+										</button>
+									</div>
+
+									<div class="col">
+										<button class="btn--export text-nowrap">
+											<span class="align-middle mr-10"><img src="../dist/images/svg/xls.svg" alt=""></span>
+											<span class="align-middle">Export XLS</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<nav class="pagination justify-content-center my-20">
+					  <a href="" class="pagination__prev"></a>
+					  <a href="" class="pagination__item active">1</a>
+					  <a href="" class="pagination__item">2</a>
+					  <a href="" class="pagination__item">3</a>
+					  <a href="" class="pagination__item">4</a>
+					  <a href="" class="pagination__item">5</a>
+					  <a href="" class="pagination__next"></a>
+					</nav>
+
+					<div class="divider"></div>
+				</div>
+
+			</div>
+
+			@@include('footer.html')
+		</main>
+		@@include('confirm-modal.html')
+
+		@@include('reports/player-details.html')
+		@@include('foot.html')
+	</body>
+</html>

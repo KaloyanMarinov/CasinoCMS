@@ -1,0 +1,14 @@
+.wrapper {
+	min-height: 100vh;
+	z-index: 2;
+	background-color: $body-bg;
+	transition: $default-transition;
+	@include media-breakpoint-up(lg) { padding-top: 64px; }
+	@include media-breakpoint-only(md) { padding-top: 52px; }
+	@include media-breakpoint-only(sm) { padding-top: 41px; }
+	@include media-breakpoint-down(xs) { padding-top: 60px; }
+
+		&.nav-menu--open {
+			transform: translate($nav-width, 0);
+		}
+}

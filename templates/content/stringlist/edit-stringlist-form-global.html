@@ -1,0 +1,96 @@
+<form>
+  <div class="row">
+    <div class="col-md-6 col-12 mb-25">
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-sm-2 col-3">
+            <label>Label</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-12 mb-25">
+      <div class="form__group">
+        <div class="row py-sm-5">
+          <div class="col-sm col-12">
+            <div class="form__row align-items-center">
+              <div class="col-sm-2 col-3">
+                <label class="d-block">Type</label>
+              </div>
+
+              <div class="col-sm col-auto nav">
+                <label class="form__custom-radio mr-15">
+                  <input type="radio" name="stringtype" class="form__custom-radio__input" checked data-target=".type-string">
+                  <span class="form__custom-radio__control"></span>
+                  <span class="form__custom-radio__label">String</span>
+                </label>
+
+                <label class="form__custom-radio">
+                  <input type="radio" name="stringtype" class="form__custom-radio__input" data-target=".type-widget">
+                  <span class="form__custom-radio__control"></span>
+                  <span class="form__custom-radio__label">Widget</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-25 @@parent">
+    <div class="collapse show type-string" data-parent=".@@parent">
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-md-1 col-sm-2 col-3">
+            <label>String</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse type-widget" data-parent=".@@parent">
+      <div class="form__group">
+        <label class="d-block mb-10">Widget</label>
+        <textarea name="editor2" class="editor"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider pt-sm-25 pt-20">
+    <div class="row justify-content-sm-between">
+      <div class="col-lg-4 col-sm-8 col-12">
+        <div class="row">
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="submit" class="btn btn--orange btn--lg-round w-100"><i class="wmd wmd-21 mr-10"></i>save</button>
+          </div>
+
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="button" class="btn btn--purple btn--lg-round w-100"><i class="wmd wmd-30 mr-10"></i>Duplicate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-sm-4 col-12">
+        <button type="button" class="btn btn--gray btn--lg-round w-100" data-toggle="modal" data-target="#confirmModdal"><i class="wmd wmd-31 mr-10"></i>Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

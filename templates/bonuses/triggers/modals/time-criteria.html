@@ -1,0 +1,160 @@
+<div class="modal fade" id="timeCriteria" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content text-center">
+      <div class="py-20 bg-gray-200 rounded-top">
+        <h4 class="h2 font-weight-bold">Time Criteria</h4>
+      </div>
+      <div class="p-20">
+        <div class="mb-30 nav">
+          <label class="form__custom-radio mr-sm-40 mr-10 mb-sm-0 mb-10 js-radio-tab" data-toggle="tab" data-target="#timeBetween">
+            <input type="radio" name="timeType" class="form__custom-radio__input" checked>
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">Period</span>
+          </label>
+
+          <label class="form__custom-radio mr-sm-40 mr-10 mb-sm-0 mb-10 js-radio-tab" data-toggle="tab" data-target="#timeSingle">
+            <input type="radio" name="timeType" class="form__custom-radio__input">
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">Exact time</span>
+          </label>
+
+          <label class="form__custom-radio mr-sm-40 mr-10 mb-sm-0 mb-10 js-radio-tab" data-toggle="tab" data-target="#timeSingle">
+            <input type="radio" name="timeType" class="form__custom-radio__input">
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">Before</span>
+          </label>
+
+          <label class="form__custom-radio js-radio-tab" data-toggle="tab" data-target="#timeSingle">
+            <input type="radio" name="timeType" class="form__custom-radio__input">
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">After</span>
+          </label>
+        </div>
+
+        <div class="tab-content mb-20">
+          <div class="tab-pane fade" id="timeSingle">
+            <div class="form__group d-inline-block">
+              <div class="form__row align-items-center">
+                <div class="col-sm-auto col-3">
+                  <label class="mr-10">Date</label>
+                </div>
+
+                <div class="col">
+                  <input type="text" class="form__control form__control--period font-size-sm form_datetime" value="" required>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade show active" id="timeBetween">
+            <div class="row justify-content-center">
+              <div class="col-sm-auto col-12 mb-sm-0 mb-10">
+                <div class="form__group">
+                  <div class="form__row align-items-center">
+                    <div class="col-sm-auto col-3">
+                      <label class="mr-10">Start</label>
+                    </div>
+
+                    <div class="col">
+                      <input type="text" class="form__control form__control--period font-size-sm form_datetime" placeholder="Start date" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-auto col-12">
+                <div class="form__group">
+                  <div class="form__row align-items-center">
+                    <div class="col-sm-auto col-3">
+                      <label class="mr-10">End</label>
+                    </div>
+
+                    <div class="col">
+                      <input type="text" class="form__control form__control--period font-size-sm form_datetime" placeholder="End date" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-30 nav">
+          <label class="form__custom-radio mr-sm-40 mr-10 mb-sm-0 mb-10">
+            <input type="checkbox" class="form__custom-radio__input" checked data-toggle='collapse' data-target='#days'>
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">Any Day</span>
+          </label>
+          
+          <label class="form__custom-radio">
+            <input type="checkbox" class="form__custom-radio__input">
+            <span class="form__custom-radio__control"></span>
+            <span class="form__custom-radio__label">Any Date (only time)</span>
+          </label>
+        </div>
+          
+        <div id="days" class="collapse">
+          <div class="pb-20">
+            <label class="form__custom-radio mr-sm-15 mr-10 mb-sm-0 mb-10">
+              <input type="checkbox" class="form__custom-radio__input" checked>
+              <span class="form__custom-radio__control"></span>
+              <span class="form__custom-radio__label">Mon</span>
+            </label>
+
+            <label class="form__custom-radio mr-sm-15 mr-10 mb-sm-0 mb-10">
+              <input type="checkbox" class="form__custom-radio__input" checked>
+              <span class="form__custom-radio__control"></span>
+              <span class="form__custom-radio__label">Tue</span>
+            </label>
+
+            <label class="form__custom-radio mr-sm-15 mr-10 mb-sm-0 mb-10">
+              <input type="checkbox" class="form__custom-radio__input" checked>
+              <span class="form__custom-radio__control"></span>
+              <span class="form__custom-radio__label">Wed</span>
+            </label>
+
+            <label class="form__custom-radio mr-sm-15 mr-10 mb-sm-0 mb-10">
+              <input type="checkbox" class="form__custom-radio__input" checked>
+              <span class="form__custom-radio__control"></span>
+              <span class="form__custom-radio__label">Thu</span>
+            </label>
+
+            <label class="form__custom-radio mr-sm-15 mr-10 mb-sm-0 mb-10">
+              <input type="checkbox" class="form__custom-radio__input" checked>
+              <span class="form__custom-radio__control"></span>
+              <span class="form__custom-radio__label">Fri</span>
+            </label>
+
+            <label class="form__custom-radio mr-sm-15 mr-10 mb-sm-0 mb-10">
+              <input type="checkbox" class="form__custom-radio__input" checked>
+              <span class="form__custom-radio__control"></span>
+              <span class="form__custom-radio__label">Sat</span>
+            </label>
+
+            <label class="form__custom-radio">
+              <input type="checkbox" class="form__custom-radio__input" checked>
+              <span class="form__custom-radio__control"></span>
+              <span class="form__custom-radio__label">Sun</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-7 col-md-8 col-12">
+            <div class="row">
+              <div class="col-sm-6 col-12 mt-20">
+                <button type="button" class="btn btn--orange btn--lg-round w-100"><i class="wmd wmd-21 mr-10"></i>save</button>
+              </div>
+
+              <div class="col-sm-6 col-12 mt-20">
+                <button class="btn btn--outline-gray btn--lg-round w-100" data-dismiss="modal"><i class="wmd wmd-23 mr-15"></i> cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

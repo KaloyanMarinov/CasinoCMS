@@ -1,0 +1,12 @@
+@each $font, $settings in $fonts {
+	$family: map-get($settings, family);
+	$familyit: map-get($settings, familyit);
+	$weight: map-get($settings, weight);
+  $style: map-get($settings, style);
+
+		.font-family-#{$font} {
+			font-family: $family !important;
+			font-weight: $weight !important;
+			font-style: $style !important;
+		}
+}

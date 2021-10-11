@@ -1,0 +1,653 @@
+<form>
+  <div class="row align-items-center justify-content-between">
+    <div class="col-lg-4 col-sm-6 col-12 mb-25">
+      <div class="form__group">
+        <div class="form__row align-items-center">
+          <div class="col-3">
+            <label>Trigger name</label>
+          </div>
+
+          <div class="col">
+            <input type="text" class="form__control">
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-sm-6 col-12 mb-25 text-sm-right">
+      <div class="form__group mb-sm-0 d-inline-block">
+        <div class="form__row align-items-center">
+          <div class="col">
+            <label class="d-block">Enabled</label>
+          </div>
+
+          <div class="col-sm col-auto">
+            <label class="form__custom-check">
+              <input type="checkbox" class="form__custom-check__input" checked="">
+              <span class="form__custom-check__control"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__group d-inline-block ml-20">
+        <div class="form__row align-items-center">
+          <div class="col-auto">
+            <label class="d-block text-nowrap">Once per player</label>
+          </div>
+
+          <div class="col-sm col-auto">
+            <label class="form__custom-check">
+              <input type="checkbox" class="form__custom-check__input">
+              <span class="form__custom-check__control"></span>
+            </label>
+          </div>
+
+          <div class="col-auto">
+            <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mb-30">Trigger Type</h3>
+
+  <div class="row nav">
+    @@loop('bonuses/triggers/trigger-type.html', [
+      {"name": "Login", "target": "login"},
+      {"name": "Deposit", "target": "deposit"},
+      {"name": "Wager", "target": "wager"},
+      {"name": "Win", "target": "win"},
+      {"name": "Loss Amount", "target": "lossAmount"},
+      {"name": "Lost Rounds", "target": "lostRounds"},
+      {"name": "Rounds", "target": "rounds"},
+      {"name": "Special Trophy", "target": "specialTrophy"},
+      {"name": "Activity Trophy", "target": "activityTrophy"},
+      {"name": "Game Feature", "target": "gameFeature"},
+      {"name": "WishCoins", "target": "wishCoins"},
+      {"name": "WishPoints", "target": "wishPoints"},
+      {"name": "Levels", "target": "levels"},
+      {"name": "Withdrawal", "target": "withdrawal"},
+      {"name": "Account registration completed", "target": "registration"}
+    ])
+  </div>
+  
+  <div class="d-none js-trigger-options">
+    <h3 class="mb-30">Fire trigger when:</h3>
+
+    <div class="table-responsive mb-30">
+      <table class="trigger__table table table--bordered table--rounded text-black">
+        <thead class="thead--light">
+          <tr>
+            <th>Type</th>
+            <th>Condition</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-78 mr-20 align-middle text-orange"></i> Time criteria</td>
+            <td>Period after 21.02.2019</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#timeCriteria" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-79 mr-20 align-middle text-orange"></i> Completed Number Actions</td>
+            <td>Number of times Exact 3</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#numberActions" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-80 mr-20 align-middle text-orange"></i> Consecutive Times</td>
+            <td>Consecutive Times Exact 3</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#consecutivecTimes" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-81 mr-20 align-middle text-orange"></i> Number Game Rounds</td>
+            <td>Number of Games Rounds Exact 3</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#gamesRounds" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-82 mr-20 align-middle text-orange"></i> Amount</td>
+            <td>Amount (Value) Exact 3</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#amount" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-83 mr-20 align-middle text-orange"></i> Game criteria</td>
+            <td>Games Specific game Book of Ra,Lucky Fruits, 3D Slots</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#games" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-84 mr-20 align-middle text-orange"></i> Exact Level</td>
+            <td>Level Exact 3</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#level" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-85 mr-20 align-middle text-orange"></i> SMS Verified</td>
+            <td>SMS Verify Yes</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#smsVerify" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-86 mr-20 align-middle text-orange"></i> Exact Trophy</td>
+            <td>Exact Trophy Rabbit Foot</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#exactTrophy" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap"><i class="wmd wmd-87 mr-20 align-middle text-orange"></i> Exact Game Feature</td>
+            <td>Game Feature Fired Free Spins</td>
+            <td class="text-nowrap" style="width: 20%">
+              <button type="button" data-toggle="modal" data-target="#gameFired" class="mr-20"><i class="wmd wmd-77 mr-5"></i> Edit</button>
+              <button type="button"><i class="wmd wmd-22 mr-5"></i> Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-pane fade" id="login">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="deposit">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Amount", "icon": "82", "target" : "amount"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="wager">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">  
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Amount", "icon": "82", "target" : "amount"},
+            {"name": "Game criteria", "icon": "83", "target" : "games"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="win">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Consecutive Times", "icon": "80", "target" : "consecutivecTimes"},
+            {"name": "Number Game Rounds", "icon": "81", "target" : "gamesRounds"},
+            {"name": "Amount", "icon": "82", "target" : "amount"},
+            {"name": "Game criteria", "icon": "83", "target" : "games"},
+            {"name": "Country", "icon": "88", "target" : "country"},
+            {"name": "Language", "icon": "89", "target" : "language"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="lossAmount">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Consecutive Times", "icon": "80", "target" : "consecutivecTimes"},
+            {"name": "Number Game Rounds", "icon": "81", "target" : "gamesRounds"},
+            {"name": "Amount", "icon": "82", "target" : "amount"},
+            {"name": "Game criteria", "icon": "83", "target" : "games"},
+            {"name": "Exact Level", "icon": "84", "target" : "level"},
+            {"name": "SMS Verified", "icon": "85", "target" : "smsVerify"},
+            {"name": "Exact Trophy", "icon": "86", "target" : "exactTrophy"},
+            {"name": "Exact Game Feature", "icon": "87", "target" : "gameFired"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="lostRounds">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Consecutive Times", "icon": "80", "target" : "consecutivecTimes"},
+            {"name": "Number Game Rounds", "icon": "81", "target" : "gamesRounds"},
+            {"name": "Amount", "icon": "82", "target" : "amount"},
+            {"name": "Game criteria", "icon": "83", "target" : "games"},
+            {"name": "Country", "icon": "88", "target" : "country"},
+            {"name": "Language", "icon": "89", "target" : "language"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="rounds">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Number Game Rounds", "icon": "81", "target" : "gamesRounds"},
+            {"name": "Amount", "icon": "82", "target" : "amount"},
+            {"name": "Game criteria", "icon": "83", "target" : "games"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="specialTrophy">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Exact Trophy", "icon": "86", "target" : "exactTrophy"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="activityTrophy">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="gameFeature">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Consecutive Times", "icon": "80", "target" : "consecutivecTimes"},
+            {"name": "Game criteria", "icon": "83", "target" : "games"},
+            {"name": "Exact Game Feature", "icon": "87", "target" : "gameFired"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="gameFeature">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Consecutive Times", "icon": "80", "target" : "consecutivecTimes"},
+            {"name": "Game criteria", "icon": "83", "target" : "games"},
+            {"name": "Exact Game Feature", "icon": "87", "target" : "gameFired"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="wishCoins">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Amount", "icon": "82", "target" : "amount"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="wishPoints">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Amount", "icon": "82", "target" : "amount"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="levels">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Exact Level", "icon": "84", "target" : "level"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="withdrawal">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "Completed Number Actions", "icon": "79", "target" : "numberActions"},
+            {"name": "Amount", "icon": "82", "target" : "amount"}
+          ])
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="registration">
+        <h3 class="mb-30">Add other criteria</h3>
+        <div class="row mx-n10 mb-15">
+          @@loop('bonuses/triggers/trigger-box.html', [
+            {"name": "Time criteria", "icon": "78", "target" : "timeCriteria"},
+            {"name": "SMS Verified", "icon": "85", "target" : "smsVerify"}
+          ])
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mb-15">Rewards:</h3>
+
+    <div class="js-clone-wrapper">
+      <div class="js-rewards-clone d-none">
+        <div class="trigger__reward form__group mb-20">
+          <div class="form__row align-items-center">
+            <div class="col-sm col-12 mb-sm-0 mb-15">
+              <div class="form__row align-items-center">
+                <div class="col-auto">
+                  <label>Type</label>
+                </div>
+
+                <div class="col">
+                  <select class="form__control js-clone-select2">
+                    <option value=""></option>
+                    <option value="1">Deposit</option>
+                    <option value="2">Reload</option>
+                    <option value="3">Activity Trophy</option>
+                    <option value="4">Wishing Well</option>
+                    <option value="5">Free Spin</option>
+                    <option value="6">Free Cash</option>
+                    <option value="7">Mega Free Spin</option>
+                    <option value="8">Rank Trophy</option>
+                    <option value="9">Lucky Gem</option>
+                    <option value="points">Points</option>
+                    <option value="coins">Coins</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form__row align-items-center">
+                <div class="col-auto">
+                  <label>Value</label>
+                </div>
+
+                <div class="col">
+                  <select class="form__control js-clone-select2" multiple>
+                    <option value=""></option>
+                    <option value="5">Rabbit's Foot</option>
+                    <option value="6">Lady Luck</option>
+                    <option value="7">Lucky Acorn</option>
+                    <option value="8">25 Super Spins</option>
+                    <option value="9">5 € Bonus</option>
+                    <option value="10">Welcome bonus 100% up to €50</option>
+                    <option value="12">Wishing Well Token 2</option>
+                    <option value="13">50 Free Spins</option>
+                    <option value="15">Rainbow</option>
+                    <option value="16">Wishing Well Token 1</option>
+                    <option value="21">Reload 100% up to €150</option>
+                    <option value="23">Shooting Star</option>
+                    <option value="24">Lucky Monkey</option>
+                    <option value="25">Lucky Penny</option>
+                    <option value="26">Genie</option>
+                    <option value="27">Wishbone</option>
+                    <option value="29">Ladybug</option>
+                    <option value="30">Four-Leaf Clover</option>
+                    <option value="31">Horseshoe</option>
+                    <option value="32">Lucky Number 7</option>
+                    <option value="33">Unicorn</option>
+                    <option value="34">11:11</option>
+                    <option value="35">Dandelions</option>
+                    <option value="36">Lucky Leprechaun</option>
+                    <option value="37">Money Voodoo Doll</option>
+                    <option value="38">Money Tree</option>
+                    <option value="39">Strike it Rich!</option>
+                    <option value="40">Money bag</option>
+                    <option value="41">Phoenix</option>
+                    <option value="42">Gambler's Amulet</option>
+                    <option value="43">Jackpot Amulet</option>
+                    <option value="44">Witch's Cat</option>
+                    <option value="45">Lucky Rat</option>
+                    <option value="46">Lucky Ox</option>
+                    <option value="47">Lucky Tiger</option>
+                    <option value="48">Lucky Rabbit</option>
+                    <option value="49">Lucky Dragon</option>
+                    <option value="50">Lucky Snake</option>
+                    <option value="51">Lucky Horse</option>
+                    <option value="52">Lucky Goat</option>
+                    <option value="53">Lucky Rooster</option>
+                    <option value="54">Lucky Dog</option>
+                    <option value="55">Lucky Pig</option>
+                    <option value="58">Newbie</option>
+                    <option value="59">Novice</option>
+                    <option value="63">Welcome Back</option>
+                    <option value="64">Rookie</option>
+                    <option value="65">Beginner</option>
+                    <option value="66">Apprentice</option>
+                    <option value="67">Regular</option>
+                    <option value="68">Talented</option>
+                    <option value="69">Skilled</option>
+                    <option value="70">Intermediate</option>
+                    <option value="71">Hotshot</option>
+                    <option value="72">Proficient</option>
+                    <option value="73">Experienced</option>
+                    <option value="74">Advanced</option>
+                    <option value="75">Jefe</option>
+                    <option value="76">Boss</option>
+                    <option value="77">Champion</option>
+                    <option value="78">Superstar</option>
+                    <option value="79">Expert</option>
+                    <option value="80">Virtuoso</option>
+                    <option value="81">Master</option>
+                    <option value="82">WishMaker</option>
+                    <option value="83">Triple Threat </option>
+                    <option value="84">Third Login </option>
+                    <option value="85">Five Lucky Logins </option>
+                    <option value="86">Week of Winning</option>
+                    <option value="88">14 Days of Fun </option>
+                    <option value="89">Two Week Winner </option>
+                    <option value="90">One, Two, Three Weeks </option>
+                    <option value="91">Four Week Streak</option>
+                    <option value="92">Five and Festive </option>
+                    <option value="93">Cha-Ching! </option>
+                    <option value="94">Twice the luck</option>
+                    <option value="95">Triple the Fun </option>
+                    <option value="96">Five Feisty Deposits </option>
+                    <option value="97">Top Ten Deposits</option>
+                    <option value="98">Silver Deposits </option>
+                    <option value="99">Gold Deposits</option>
+                    <option value="100">Hey Big Player! </option>
+                    <option value="101">Golden Pockets</option>
+                    <option value="102">Highroller</option>
+                    <option value="103">Lowroller</option>
+                    <option value="104">Slot Master</option>
+                    <option value="105">Poker Face</option>
+                    <option value="106">Roulette Lover!</option>
+                    <option value="107">Blackjack Lover</option>
+                    <option value="108">Baccarat Lover</option>
+                    <option value="109">Early Bird</option>
+                    <option value="110">Night Owl</option>
+                    <option value="111">Birthday</option>
+                    <option value="112">Weekend</option>
+                    <option value="113">FruitMania</option>
+                    <option value="114">Golden Oldie</option>
+                    <option value="115">Jackpot Galore</option>
+                    <option value="116">Lucky Kitty</option>
+                    <option value="117">Movie Star</option>
+                    <option value="118">Secret Agent</option>
+                    <option value="119">Viva Las Vegas</option>
+                    <option value="120">Wishing Well Token 3</option>
+                    <option value="121">Wishing Well Token 4</option>
+                    <option value="122">Wishing Well Token 5</option>
+                    <option value="123">Wishing Well Token 6</option>
+                    <option value="124">Welcome bonus 100% up to 500 NOK</option>
+                    <option value="125">Reload 150% up to 2000 NOK</option>
+                    <option value="126">Welcome bonus 100% up to 2000 NOK</option>
+                    <option value="127">Reload 150% up to 5000 NOK</option>
+                    <option value="130">Welcome bonus 100% up to 300 SEK</option>
+                    <option value="131">Reload 150% up to 750 SEK</option>
+                    <option value="132">Welcome bonus 100% up to 2000 SEK</option>
+                    <option value="133">Reload 150% up to 2000 SEK</option>
+                    <option value="134">Welcome bonus 100% up to €100</option>
+                    <option value="135">Reload 100% up to €150</option>
+                    <option value="136">Welcome bonus 100% up to £100</option>
+                    <option value="137">Welcome bonus 100% up to €150</option>
+                    <option value="138">Welcome bonus 100% up to $100</option>
+                    <option value="139">Reload 100% up to $150</option>
+                    <option value="140">Welcome bonus 100% up to $100</option>
+                    <option value="141">Reload 100% up to $150</option>
+                    <option value="142">50 Free Spins</option>
+                    <option value="143">50 Free Spins</option>
+                    <option value="144">100 Free Spins</option>
+                    <option value="145">50 Free Spins</option>
+                    <option value="146">100 Free Spins</option>
+                    <option value="147">50 Free Spins</option>
+                    <option value="148">100 Wish Spins</option>
+                    <option value="149">50 Free Spins</option>
+                    <option value="150">100 Free Spins</option>
+                    <option value="151">100 Free Spins</option>
+                    <option value="153">10 € Bonus</option>
+                    <option value="154">25 € Cash Bonus</option>
+                    <option value="155">25 Free Spins</option>
+                    <option value="156">7 Super Spins Dwarfs Gone Wild</option>
+                    <option value="157">SBtest 10 FS</option>
+                    <option value="158">Yggtest1</option>
+                    <option value="159">PNGtest1</option>
+                    <option value="161">25 Free Spins Sakura Fortune</option>
+                    <option value="162">5 EUR Free cash</option>
+                    <option value="163">5 Super Spins The Wild Chase</option>
+                    <option value="164">10 Super Spins Book of Dead</option>
+                    <option value="165">50 Free Spins Book of Dead</option>
+                    <option value="166">5 Mega Spins Book of Dead</option>
+                    <option value="167">50 EUR bonus Prize</option>
+                    <option value="168">10 Super Spins Big Bad Wolf</option>
+                    <option value="169">12 Super Spins Gold King</option>
+                    <option value="170">25 Super Spins Sweet Alchemy</option>
+                    <option value="171">25 Super Spins Golden Legend</option>
+                    <option value="172">20 Super Spins Reactoonz</option>
+                    <option value="173">18 Super Spins Phoenix Sun</option>
+                    <option value="174">100 Free Spins Rise of Olympus</option>
+                    <option value="175">15 Super Spins Sizzling Spins</option>
+                    <option value="176">20 Super Spins Moon Princess</option>
+                    <option value="177">20 EUR free cash</option>
+                    <option value="178">15 Super Spins Eastern Emeralds</option>
+                    <option value="179">30 Super Spins Eastern Emeralds</option>
+                    <option value="180">15 Mega Spins Eastern Emeralds</option>
+                    <option value="181">100 EUR bonus prize</option>
+                    <option value="182">25 Super Spins Dwarfs Gone Wild</option>
+                    <option value="183">30 Super Spins Dwarfs Gone Wild</option>
+                    <option value="184">20 Mega Spins Dwarfs Gone Wild</option>
+                    <option value="185">150 EUR bonus prize</option>
+                    <option value="186">100 Free Spins Leprechaun Hills</option>
+                    <option value="187">40 Super Spins Phoenix Sun</option>
+                    <option value="188">50 Super Spins Phoenix Sun</option>
+                    <option value="189">25 Mega Spins Phoenix Sun</option>
+                    <option value="190">200 EUR bonus prize</option>
+                    <option value="191">50 Super Spins Sizzling Spins</option>
+                    <option value="192">75 Super Spins Sizzling Spins</option>
+                    <option value="193">30 Mega Spins Sizzling Spins</option>
+                    <option value="194">250 EUR bonus prize</option>
+                    <option value="195">100 Super Spins Book of Dead</option>
+                    <option value="196">80 Super Spins Book of Dead</option>
+                    <option value="197">30 Mega Spins Book of Dead</option>
+                    <option value="198">300 EUR bonus Prize</option>
+                    <option value="199">25 EUR free cash</option>
+                    <option value="200">100% up to €200 Test Reload</option>
+                    <option value="201">Test FS Gonzo</option>
+                    <option value="202">15 Mega Spins Big Bad Wolf</option>
+                    <option value="203">15 Mega Spins Book of Dead</option>
+                    <option value="204">40 EUR casino bonus </option>
+                    <option value="205">50 EUR casino bonus</option>
+                    <option value="206">75 EUR casino bonus</option>
+                    <option value="207">100 EUR casino bonus</option>
+                    <option value="208">25 Mega Spins Sakura Fortune </option>
+                    <option value="211">test 10 fs Gonzo</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <div class="form__info text-center" tabindex="0" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"><i class="wmd wmd-29"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-auto">
+              <button type="button" class="form__info text-center js-clone-rewards-remove">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button type="button" class="btn btn--outline-purple mb-25 js-add-reward"><i class="wmd wmd-45 mr-15 align-middle"></i><span class="align-middle">Add New Reward</span></button>
+  </div>
+    
+
+  <div class="divider pt-sm-25 pt-20">
+    <div class="row justify-content-sm-between">
+      <div class="col-lg-4 col-sm-8 col-12">
+        <div class="row">
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="submit" class="btn btn--orange btn--lg-round w-100"><i class="wmd wmd-21 mr-10"></i>save</button>
+          </div>
+
+          <div class="col-sm col-12 mb-sm-0 mb-10">
+            <button type="button" class="btn btn--purple btn--lg-round w-100"><i class="wmd wmd-30 mr-10"></i>Duplicate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-sm-4 col-12">
+        <button type="button" class="btn btn--gray btn--lg-round w-100" data-toggle="modal" data-target="#confirmModdal"><i class="wmd wmd-31 mr-10"></i>Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

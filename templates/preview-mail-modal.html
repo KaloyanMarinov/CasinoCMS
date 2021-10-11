@@ -1,0 +1,57 @@
+<div class="modal fade" id="previewEmailModdal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content overflow-hidden">
+      <div class="email__preview__header px-30 pt-30">
+        <div class="row align-items-center">
+          <div class="col">
+            <h3 class="h2-sm mb-10 font-weight-bold">Preview your email</h3>
+          </div>
+          <div class="col-auto">
+            <button class="close" data-dismiss="modal"><i class="wmd wmd-4 align-middle"></i></button>
+          </div>
+        </div>
+
+        <ul class="nav email__preview__tabs d-flex align-items-end" role="tablist">
+          <li>
+            <button type="button" class="py-10 font-weight-medium active" data-toggle="tab" data-target="#desktop" role="tab" aria-selected="true"><i class="wmd wmd-73 mr-5"></i> Desktop</button>
+          </li>
+          <li>
+            <button type="button" class="py-10 font-weight-medium" data-toggle="tab" data-target="#tablet" role="tab" aria-selected="false"><i class="wmd wmd-74 mr-5"></i> Tablet</button>
+          </li>
+          <li>
+            <button type="button" class="py-10 font-weight-medium" data-toggle="tab" data-target="#mobile" role="tab" aria-selected="false"><i class="wmd wmd-75 mr-5"></i> Mobile</button>
+          </li>
+          <li>
+            <button type="button" class="py-10 font-weight-medium" data-toggle="tab" data-target="#fullscreen" role="tab" aria-selected="false"><i class="wmd wmd-76 mr-5"></i> Full Screen</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="email__preview__content mx-sm-30 mx-10">
+        <div class="tab-content my-10 py-30">
+          <div class="tab-pane active" id="desktop">
+            <div class="email__preview__desktop mx-auto">
+              <iframe src="../templates/mail-template.html" frameborder="0" class="mx-auto"></iframe>
+            </div>
+          </div>
+          <div class="tab-pane" id="tablet">
+            <div class="email__preview__tablet mx-auto">
+              <iframe src="../templates/mail-template.html" frameborder="0" class="mx-auto"></iframe>
+            </div>
+          </div>
+          <div class="tab-pane" id="mobile">
+            <div class="email__preview__mobile mx-auto">
+              <iframe src="../templates/mail-template.html" frameborder="0" class="mx-auto"></iframe>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="fullscreen">
+            <div class="email__preview__fullscreen mx-auto">
+              <iframe src="../templates/mail-template.html" frameborder="0" class="mx-auto"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

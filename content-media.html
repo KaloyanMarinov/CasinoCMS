@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Menus Library" })
+  <body>
+
+    @@include('nav.html')
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header.html', { "search-open": false })
+      @@include('search.html')
+
+      <div class="w-100 pt-sm-30 pt-20">
+        <div class="container">
+          <ul class="breadcrumb mb-15">
+            <a href="dashboard.html" class="breadcrumb__item">Home</a>
+            <a href="#" class="breadcrumb__item">Content</a>
+            <span class="breadcrumb__item active">Media</span>
+          </ul>
+
+          <div class="row align-items-center mb-15">
+            <div class="col">
+              <h1 class="h1-rem-sm h2">Menus Library</h1>
+            </div>
+          </div>
+
+          <div class="media__library">
+            <div class="media__library__container bg-white">
+              <div class="media__library__toolbar">
+                <div class="row align-items-center">
+                  <div class="col-lg-4 col">
+                    <div class="row align-items-center mx-0">
+                      <div class="col-auto px-0 d-sm-block d-none"><label class="mr-10">Media Library</label></div>
+                      <div class="col px-0">
+                        <input type="text" class="form__control" placeholder="Search">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="col-lg-4 col">
+                    <div class="row align-items-center mx-0">
+                      <div class="col-auto px-0 d-sm-block d-none"><label class="mr-10">Filter By Category</label></div>
+                      <div class="col px-0">
+                        <select class="form__control">
+                          <option value="">All</option>
+                          <option value="">20 per page</option>
+                          <option value="">30 per page</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="media__library__content">
+                <div class="media__library__attachments media__library__simplebar" data-simplebar data-simplebar-auto-hide="false">
+                  <div class="media__library__attachment">
+                    <label class="media__library__btn-upload">
+                      <span class="media__library__thumbnail">
+                        <span class="media__library__thumbnail__upload">
+                          <img src="../dist/images/icons/upload.svg" alt="">
+                          <span class="media__library__thumbnail__upload__drag">Drop File Here OR <span class="media__library__thumbnail__upload__link">Click to Upload</span></span>
+                        </span>
+  
+                      </span>
+  
+                      <span class="media__library__name text-truncate">Upload new</span>
+  
+                      <input type="file">
+                    </label>
+                  </div>
+  
+                  <div class="media__library__attachment">
+                    <button type="button" class="media__library__btn-attachment">
+                      <span class="media__library__thumbnail">
+                        <span class="media__library__checkmark"><i class="wmd wmd-21"></i></span>
+                        <span class="media__library__thumbnail__centered">
+                          <img src="http://wm.celtis.net/wishcms/images/uploads/PlaynGo_12120218.png" alt="">
+                        </span>
+                      </span>
+                  
+                      <span class="media__library__name text-truncate">Loremispum.jpg</span>
+                    </button>
+                  </div>
+  
+                  @@loop('media-library/attachment.html', [
+                    {},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}
+                  ])
+                </div>
+              </div>
+  
+              <div class="media__library__sidebar">
+                <button type="button" class="media__library__sidebar__close close d-sm-none">
+                  <i class="wmd wmd-4"></i>
+                </button>
+                <div class="media__library__simplebar" data-simplebar data-simplebar-auto-hide="false">
+                  <div class="media__library__sidebar__content">
+                    <div class="media__library__sidebar__preview">
+                      <img src="../dist/images/examples/wmworks_23001542.jpg" alt="">
+                    </div>
+  
+                    <div class="media__library__name mb-10 text-truncate">Loremispumfile.jpg</div>
+  
+                    <div class="media__library__stats mb-30">
+                      <p class="mb-20"><i class="wmd wmd-57"></i>Image Size: <span>1233px x 234px</span></p>
+                      <p class="mb-20"><i class="wmd wmd-58"></i>File Size: <span>132kb</span></p>
+                      <p class="mb-20"><i class="wmd wmd-59"></i>Uploaded on: <span>23.10.2018</span></p>
+                    </div>
+  
+                    <div class="form__group">
+                      <label class="mb-5">Categories</label>
+  
+                      <select class="form__control js-select2" multiple>
+                        <option value="67">Top Games</option>
+                        <option value="70">New Stars</option>
+                        <option value="79">Live Roulette sub</option>
+                        <option value="78">Top live games sub</option>
+                        <option value="80">Live Blackjack sub</option>
+                        <option value="81">Live Baccarat sub</option>
+                        <option value="82">More Live Games sub</option>
+                        <option value="83">Quick play sub</option>
+                        <option value="102">VIP Live games sub</option>
+                        <option value="37">Jackpots</option>
+                        <option value="71">Wishmaker Likes sub</option>
+                        <option value="86">Best of Vegas sub</option>
+                        <option value="104">Wishmaker top 10 sub</option>
+                        <option value="105">New stars sub</option>
+                        <option value="106">Halloween top picks sub</option>
+                        <option value="107">Jackpots sub</option>
+                        <option value="108">Live Casino sub</option>
+                        <option value="39">Live Casino</option>
+                        <option value="66" selected="selected">All</option>
+                        <option value="84">VIP</option>
+                        <option value="85">Table Games</option>
+                        <option value="87">Video Slots</option>
+                        <option value="88">Classic Slots</option>
+                        <option value="90">3D Slots</option>
+                        <option value="91">Blackjack</option>
+                        <option value="92">Branded Slots</option>
+                        <option value="93">Card Games</option>
+                        <option value="94">Fruit Slots</option>
+                        <option value="95">High Roller Slots</option>
+                        <option value="96">Instant Wins</option>
+                        <option value="97">Pub Slots</option>
+                        <option value="98">Roulette</option>
+                        <option value="99">Vegas Slots</option>
+                        <option value="100">Video Poker</option>
+                        <option value="101">Live Games</option>
+                        <option value="110">Favourites</option>
+                      </select>
+                    </div>
+  
+                    <div class="form__group">
+                      <label class="mb-5">Alt Text</label>
+                      <input type="text" class="form__control" placeholder="Type here">
+                    </div>
+  
+                    <button type="button" class="btn btn--lg-round btn--orange w-100 mb-10"><i class="wmd wmd-21 mr-10"></i>Use this image</button>
+  
+                    <button type="button" class="btn btn--lg w-100"><i class="wmd wmd-31 mr-10"></i>Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       @@include('footer.html')
+    </main>
+    
+    @@include('foot.html')
+  </body>
+</html>

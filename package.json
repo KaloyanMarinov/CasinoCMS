@@ -1,0 +1,64 @@
+{
+  "name": "wmdash",
+  "version": "1.0.0",
+  "author": "Elegance Team",
+  "homepage": "https://elegancedesign.net/",
+  "private": true,
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "scripts": {
+    "jshint": "gulp jshint",
+    "jscs": "jscs gulpfile.js assets/scripts/*.js"
+  },
+  "engines": {
+    "node": ">= 4.5"
+  },
+  "dependencies": {
+    "@simonwep/pickr": "1.2.3",
+    "bootstrap": "4.1.3",
+    "ion-rangeslider": "^2.2.0",
+    "jquery": "^1.12.4",
+    "jquery-autocomplete": "^1.2.8",
+    "magicsuggest": "^2.1.4",
+    "magnific-popup": "^1.1.0",
+    "moment": "^2.24.0",
+    "popper.js": "^1.14.4",
+    "select2": "^4.0.6-rc.1",
+    "simplebar": "^2.6.1"
+  },
+  "devDependencies": {
+    "asset-builder-nobower": "^1.1.2",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-file-include": "^2.0.1",
+    "gulp-flatten": "0.4.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-less": "^3.5.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.3.0",
+    "gulp-rev": "^8.1.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-pngcrush": "^5.1.0",
+    "jshint": "^2.10.1",
+    "jshint-stylish": "^2.2.1",
+    "lazypipe": "^1.0.2",
+    "merge-stream": "^1.0.1",
+    "minimist": "^1.2.0",
+    "natives": "^1.1.6",
+    "run-sequence": "^2.2.1",
+    "traverse": "^0.6.6"
+  }
+}

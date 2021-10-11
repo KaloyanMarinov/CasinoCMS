@@ -1,0 +1,47 @@
+<div class="modal fade" id="pagesComponentsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+		<div class="modal-content overflow-hidden">
+			<div class="pt-20 pb-15 px-sm-30 px-15">
+				<h3 class="h2-sm">Choose components</h3>
+			</div>
+
+			<div class="px-sm-20 px-5">
+				<div class="pages__components" data-simplebar data-simplebar-auto-hide="false">
+					<div class="pt-5">
+						<div class="row no-gutters">
+							@@loop('content/pages/modules/component-item.html', [
+								{ "title": "Home page header", "image": "../dist/images/img/pages-components-home-header.png" },
+								{ "title": "Games selector", "image": "../dist/images/img/pages-components-games-section.png" },
+								{ "title": "Winnings & Activity", "image": "../dist/images/img/pages-components-activity-feed.png" },
+								{ "title": "Jackpot feed", "image": "../dist/images/img/pages-components-jackpot-section.png" },
+								{ "title": "Wishmaker Planet", "image": "../dist/images/img/pages-components-join-wishmaker.png" },
+								{ "title": "Half width boxes", "image": "../dist/images/img/pages-components-wishmaker-world.png" },
+								{ "title": "Landing page header", "image": "../dist/images/img/pages-components-lading-header.png" },
+								{ "title": "Container with content & image", "image": "../dist/images/img/pages-components-full-width-with-image.png" },
+								{ "title": "Bullets section", "image": "../dist/images/img/pages-components-bullets-section.png" },
+								{ "title": "Full width content", "image": "../dist/images/img/pages-components-full-width.png" }
+							])
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="px-sm-30 px-15 pb-sm-25 pb-15 pt-sm-20 pt-10 bg-white position-relative">
+				<div class="row">
+		      <div class="col-lg-5 col-sm-8 col-12">
+		        <div class="row">
+		          <div class="col-6">
+		            <button type="submit" class="btn btn--orange btn--round w-100" data-dismiss="modal"><i class="wmd wmd-21 mr-10"></i>save</button>
+		          </div>
+
+		          <div class="col-6">
+		            <button class="btn btn--outline-gray btn--round w-100" data-dismiss="modal"><i class="wmd wmd-23 mr-15"></i> cancel</button>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  @@include('head.html', { "title": "Login" })
+  <body>
+
+    <main class="wrapper d-flex flex-column justify-content-center position-relative js-wrapper">
+      @@include('header-login.html')
+
+      <div class="w-100 pt-sm-30 pt-20 my-auto">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-12">
+              <h1 class="h2 mb-20 text-center">Log in</h1>
+              <div class="card card--rounded p-sm-30 p-20 bg-white">
+                <form>
+                  <div class="form__group">
+                    <input type="email" class="form__control form--has-icon" placeholder="Email">
+                    <span class="form__icon"><i class="wmd wmd-19"></i></span>
+                  </div>
+
+                  <div class="form__group">
+                    <input type="password" class="form__control form--has-icon" placeholder="Password">
+                    <span class="form__icon"><i class="wmd wmd-20"></i></span>
+                  </div>
+
+                  <div class="form__group">
+                    <label class="form__custom-check">
+                      <input type="checkbox" class="form__custom-check__input" checked>
+                      <span class="form__custom-check__control"></span>
+                      <span class="form__custom-check__label">Remember me</span>
+                    </label>
+                  </div>
+
+                  <div class="form__submit">
+                    <input type="submit" value="log in" class="btn btn--orange btn--lg-round w-100 font-weight-black">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       @@include('footer.html', { "login": true })
+    </main>
+  </body>
+</html>

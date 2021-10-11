@@ -1,0 +1,27 @@
+.breadcrumb {
+	@extend .d-flex;
+	@extend .flex-wrap;
+
+		&__item {
+			font-size: $breadcrumb-font-size;
+			font-weight: $breadcrumb-font-weight;
+
+				&:not(.active) {
+					color: $breadcrumb-color;
+
+						&:hover {
+							color: $breadcrumb-hover-color;
+						}
+				}
+
+				&:not(:last-child):after {
+		      content: $breadcrumb-divider;
+		      padding: $breadcrumb-divider-padding;
+		      color: $breadcrumb-divider-color;
+		    }
+
+		    &.active {
+		    	color: $breadcrumb-active-color;
+		    }
+		}
+}
